@@ -46,9 +46,10 @@ public class NPC_PatrolRandomSpace : MonoBehaviour {
             if (collision.gameObject.tag == "Player") {
                 isAttacking = true;
                 Debug.Log("Attacking!");
-                collision.gameObject.GetComponent<AudioSource>().Play();
+                gameObject.GetComponent<AudioSource>().Play();
                 // Debug.Log(collision.gameObject.GetComponent<AudioSource>());
                 Destroy(collision.gameObject);
+                Debug.Log("Audio just played");
                 //anim.SetBool("Attack", true);
                 //  gameHandler.playerGetHit(damage);
                 //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 0.5f);
