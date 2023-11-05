@@ -27,16 +27,22 @@ public class CameraManager_SplitScreen : MonoBehaviour
                                                                                      //if distance is within threshold, use fullscreen MainCamera
         if (playerDistance < cameraDistance)
         {
+            cameraMain.SetActive(true);
             cameraPlayer1.GetComponent<Camera>().enabled = false;
             cameraPlayer2.GetComponent<Camera>().enabled = false;
             cameraMain.GetComponent<Camera>().enabled = true;
+            cameraPlayer1.SetActive(false);
+            cameraPlayer2.SetActive(false);
         }
         //else, use splitscreen
         else
         {
+            cameraPlayer1.SetActive(true);
+            cameraPlayer2.SetActive(true);
             cameraPlayer1.GetComponent<Camera>().enabled = true;
             cameraPlayer2.GetComponent<Camera>().enabled = true;
             cameraMain.GetComponent<Camera>().enabled = false;
+            cameraMain.SetActive(false);
         }
     }
 
