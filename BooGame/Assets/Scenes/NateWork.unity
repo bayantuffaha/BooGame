@@ -652,7 +652,7 @@ MonoBehaviour:
   cameraPlayer2: {fileID: 528095083}
   player1: {fileID: 8324407}
   player2: {fileID: 878297268}
-  cameraDistance: 15
+  cameraDistance: 5
 --- !u!1001 &1358867615968986095
 PrefabInstance:
   m_ObjectHideFlags: 0
