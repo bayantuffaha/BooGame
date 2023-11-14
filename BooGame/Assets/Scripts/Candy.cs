@@ -6,9 +6,11 @@ public class Candy : MonoBehaviour
 {
     // The reference to the coroutine
     private Coroutine pickupCoroutine;
+    private AudioSource audioSource;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
     }
 
     // This function is called when another collider enters this collider
@@ -40,6 +42,7 @@ public class Candy : MonoBehaviour
     // This function is a coroutine that handles the pickup logic
     IEnumerator Pickup()
     {
+        audioSource.Play();
         yield return new WaitForSeconds(0f);
         // Increase count
         // GameController.control.candyCount++;
