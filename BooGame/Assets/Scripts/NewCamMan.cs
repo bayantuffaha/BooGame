@@ -1,8 +1,9 @@
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
+using System;
 
-public class CameraManager_SplitScreen : MonoBehaviour
+public class CameraManager_SplotScroon : MonoBehaviour
 {
 
     public GameObject cameraMain;
@@ -10,7 +11,8 @@ public class CameraManager_SplitScreen : MonoBehaviour
     public GameObject cameraPlayer2;
     public Transform player1;
     public Transform player2;
-    public float cameraDistance = 5f;
+    public Vector2 cameraDistance = new Vector2(8f,4.5f);
+    public Vector2 playerDistance;
 
     void Start()
     {
@@ -23,9 +25,9 @@ public class CameraManager_SplitScreen : MonoBehaviour
     {
         FindPlayerCenter(); //the GameHandler acts as the target for the MainCamera
 
-        float playerDistance = Vector3.Distance(player1.position, player2.position); //get distance
+        playerDistance = new Vector2((float)Math.Abs(player1.position.x - player2.position.x), (float)Math.Abs(player1.position.y - player2.position.y)); //get distance
                                                                                      //if distance is within threshold, use fullscreen MainCamera
-        if (playerDistance < cameraDistance)
+        if (playerDistance.x < cameraDistance.x && playerDistance.y < cameraDistance.y)
         {
             cameraMain.SetActive(true);
             cameraPlayer1.GetComponent<Camera>().enabled = false;
