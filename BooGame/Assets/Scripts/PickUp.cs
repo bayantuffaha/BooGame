@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
 
-    public GameHandler gameHandler;
+//    public GameHandler gameHandler;
     //public playerVFX playerPowerupVFX;
     public bool isHealthPickUp = true;
     public bool isSpeedBoostPickUp = false;
@@ -16,7 +16,7 @@ public class PickUp : MonoBehaviour
 
     void Start()
     {
-        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
+//        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
         //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
     }
 
@@ -30,13 +30,13 @@ public class PickUp : MonoBehaviour
 
             if (isHealthPickUp == true)
             {
-                gameHandler.playerGetHit(healthBoost * -1);
+ //               gameHandler.playerGetHit(healthBoost * -1);
                 //playerPowerupVFX.powerup();
             }
 
             if (isSpeedBoostPickUp == true)
             {
-                other.gameObject.GetComponent<PlayerMove>().speedBoost(speedBoost, speedTime);
+ //               other.gameObject.GetComponent<PlayerMove>().speedBoost(speedBoost, speedTime);
                 //playerPowerupVFX.powerup();
             }
         }
