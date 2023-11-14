@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Zombie
   - Obstacle
+  - GameHandler
+  - PauseMenuSlider
   layers:
   - Default
   - TransparentFX
