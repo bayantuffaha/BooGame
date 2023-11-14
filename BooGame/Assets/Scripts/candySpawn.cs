@@ -9,9 +9,9 @@ public class candySpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < 30; i++)
+        for(int i = 0; i < 99; i++)
         {
-            Vector3 randomSpawnPos = new Vector3(Random.Range(-10, 11), Random.Range(-10, 11));
+            Vector3 randomSpawnPos = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30));
             Instantiate(CandyPrefab, randomSpawnPos, Quaternion.identity);
         }
     }

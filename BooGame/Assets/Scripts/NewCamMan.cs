@@ -24,7 +24,7 @@ public class CameraManager_SplotScroon : MonoBehaviour
     void Update()
     {
         FindPlayerCenter(); //the GameHandler acts as the target for the MainCamera
-
+        
         playerDistance = new Vector2((float)Math.Abs(player1.position.x - player2.position.x), (float)Math.Abs(player1.position.y - player2.position.y)); //get distance
                                                                                      //if distance is within threshold, use fullscreen MainCamera
         if (playerDistance.x < cameraDistance.x && playerDistance.y < cameraDistance.y)

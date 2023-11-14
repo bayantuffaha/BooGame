@@ -25,10 +25,12 @@ public class PlayerMove_2P : MonoBehaviour
     public float dashSpeed;
     public AnimationCurve dashCurve;
     Vector2 dashDirection;
+    public Transform otherP;
 
     public bool isP1 = true;
     private string theHorizontal;
     private string theVertical;
+    private string theDash;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +38,12 @@ public class PlayerMove_2P : MonoBehaviour
         if (isP1) {
             theHorizontal = "p1_Horiz";
             theVertical = "p1_Vert";
+            theDash = "Fire2";
         } else
         {
             theHorizontal = "p2_Horiz";
             theVertical = "p2_Vert";
+            theDash = "Fire1";
         }
 
         s = GetComponentInChildren<SpriteRenderer>();
@@ -48,7 +52,7 @@ public class PlayerMove_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space") && timeSinceDash - dashDuration > dashCooldown) {
+        if (Input.GetButtonDown(theDash) && timeSinceDash - dashDuration > dashCooldown) {
             isDash = true;
             timeSinceDash = 0;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
@@ -94,11 +98,22 @@ public class PlayerMove_2P : MonoBehaviour
             }
             animFrame = (animFrame+1)%4;
         }
+        Debug.Log("s");
         if (timeSinceIdle < accTime && timeSinceIdle > 0) {
             gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
+        Debug.Log("e");
         } else {
             gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
+        Debug.Log("x");
         }
+    }
+
+    public void Die() {
+        gameObject.transform.SetParent(otherP);
+        gameObject.transform.position = otherP.transform.position;
+        speed = 0;
+        dashDuration = 0;
+        s.color = new Color(0f,0f,0f,0f);
     }
 
 }

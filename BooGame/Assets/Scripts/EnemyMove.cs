@@ -128,7 +128,7 @@ void Patrolling()
             isAttacking = true;
             Debug.Log("Attacking!");
             gameObject.GetComponent<AudioSource>().Play();
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<PlayerMove_2P>().Die();
             Debug.Log("Audio just played");
         }
     }
