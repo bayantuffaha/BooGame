@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shid : MonoBehaviour
+public class Candy : MonoBehaviour
 {
     // The reference to the coroutine
     private Coroutine pickupCoroutine;
@@ -42,7 +42,7 @@ public class Shid : MonoBehaviour
     {
         yield return new WaitForSeconds(0f);
         // Increase count
-        gameControl.control.candy++;
+        // GameController.control.candyCount++;
         // Destroy this item
         Destroy(gameObject);
     }
