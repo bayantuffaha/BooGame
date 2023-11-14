@@ -8,10 +8,10 @@ public class HeartbeatManager : MonoBehaviour
     public float time = 100;
     float timeRemaining = 0;
     public AnimationCurve oVT;
-    public float minTime = 10;
-    public float maxTime = 400;
-    public float minDist = 1;
-    public float maxDist = 100;
+    public float minTime = 0.5f;
+    public float maxTime = 1.5f;
+    public float minDist = 5f;
+    public float maxDist = 50f;
 
     // Start is called before the first frame update
     void Start()
@@ -46,8 +46,9 @@ public class HeartbeatManager : MonoBehaviour
                 distance = curDistance;
             }
         }
-        distance = 
+        Debug.Log(distance);
         time = Math.Min(Math.Max(distance * (maxTime-minTime) / (maxDist-minDist), minTime), maxTime);
         timeRemaining = time;
+        Debug.Log(time);
     }
 }

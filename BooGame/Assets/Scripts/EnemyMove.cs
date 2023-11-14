@@ -44,7 +44,7 @@ public class EnemyMove : MonoBehaviour
 
             if (Physics2D.Raycast(transform.position, direction, detectionRange, obstacleLayerMask))
             {
-                Debug.Log("Obstacle detected!");
+                //Debug.Log("Obstacle detected!");
             }
 
             DrawLineOfSight();
@@ -55,7 +55,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (isChasing)
         {
-            Debug.Log("Chasing player");
+            //Debug.Log("Chasing player");
             // Move towards the player
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
@@ -95,7 +95,7 @@ void Patrolling()
         // Check if the player is within detection range
         if (direction.magnitude > detectionRange)
         {
-            Debug.LogWarning("Player out of detection range!");
+            //Debug.LogWarning("Player out of detection range!");
             return false;
         }
 

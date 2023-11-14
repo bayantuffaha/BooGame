@@ -192,6 +192,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1768935753}
     m_Modifications:
+    - target: {fileID: 72521342117032914, guid: 80c29ccbecd512b4a8b883a080dc569e, type: 3}
+      propertyPath: maxDist
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 72521342117032914, guid: 80c29ccbecd512b4a8b883a080dc569e, type: 3}
+      propertyPath: minDist
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 879640388501291157, guid: 80c29ccbecd512b4a8b883a080dc569e, type: 3}
       propertyPath: m_SortingOrder
       value: 200
@@ -251,6 +259,10 @@ PrefabInstance:
     - target: {fileID: 8260773713693991618, guid: 80c29ccbecd512b4a8b883a080dc569e, type: 3}
       propertyPath: m_SortingOrder
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769785797160773983, guid: 80c29ccbecd512b4a8b883a080dc569e, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2000,9 +2012,21 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4443408658603432767, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: maxDist
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
       propertyPath: maxTime
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: minDist
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
       propertyPath: minTime
@@ -2232,6 +2256,14 @@ PrefabInstance:
     - target: {fileID: 4547647740863515712, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318713134901268324, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -300
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318713134901268324, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_Mode
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7773025277661012905, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: moveSpot
@@ -2838,6 +2870,18 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4443408658603432767, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: m_Volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: maxDist
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980705008061137330, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
+      propertyPath: minDist
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5200458363024945909, guid: 2aeeaa7932a361744a7fa02fdf327137, type: 3}
       propertyPath: m_SortingOrder
       value: 200
@@ -3234,6 +3278,10 @@ PrefabInstance:
     - target: {fileID: 4547647740863515712, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5318713134901268324, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -300
       objectReference: {fileID: 0}
     - target: {fileID: 7773025277661012905, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: moveSpot

@@ -98,13 +98,10 @@ public class PlayerMove_2P : MonoBehaviour
             }
             animFrame = (animFrame+1)%4;
         }
-        Debug.Log("s");
         if (timeSinceIdle < accTime && timeSinceIdle > 0) {
             gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
-        Debug.Log("e");
         } else {
             gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
-        Debug.Log("x");
         }
     }
 

@@ -25,7 +25,7 @@ public class Candy : MonoBehaviour
     }
 
     // This function is called when another collider exits this collider
-    void OnTriggerExit2D(Collider2D other)
+    /*void OnTriggerExit2D(Collider2D other)
     {
         // Check if the other collider is tagged as "Player"
         if (other.CompareTag("Player"))
@@ -37,13 +37,15 @@ public class Candy : MonoBehaviour
                 pickupCoroutine = null;
             }
         }
-    }
+    }*/
 
     // This function is a coroutine that handles the pickup logic
     IEnumerator Pickup()
     {
-        audioSource.Play();
-        yield return new WaitForSeconds(0f);
+        audioSource.Play(0);
+        //yield return new WaitForSeconds(0f);
+        gameObject.transform.position = new Vector3(150f, 150f, 150f);
+        yield return new WaitForSeconds(1.003f);
         // Increase count
         // GameController.control.candyCount++;
         // Destroy this item
