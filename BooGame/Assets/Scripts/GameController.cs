@@ -26,5 +26,13 @@ public class GameController : MonoBehaviour
 
     }
 
+    public bool Line(){
+        return true;
+    }
+
+    public bool Dash(){
+        return true;
+    }
+
 }
 

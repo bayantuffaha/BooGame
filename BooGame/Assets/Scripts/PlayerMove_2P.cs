@@ -26,6 +26,8 @@ public class PlayerMove_2P : MonoBehaviour
     public AnimationCurve dashCurve;
     Vector2 dashDirection;
     public Transform otherP;
+    public GameController cont;
+    public LineRenderer line;
 
     public bool isP1 = true;
     private string theHorizontal;
@@ -52,21 +54,33 @@ public class PlayerMove_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown(theDash) && timeSinceDash - dashDuration > dashCooldown) {
+        //dash
+        if (Input.GetButtonDown(theDash) && cont.Dash()) {
             isDash = true;
-            timeSinceDash = 0;
+            timeSinceMove = 0;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
         }
-        timeSinceDash++;
+            
         if (isDash) {
-            timeSinceDash--;
             gameObject.transform.Translate(new Vector3(dashSpeed*dashDirection.x*Time.deltaTime*dashCurve.Evaluate(timeSinceDash/dashDuration), dashSpeed*dashDirection.y*Time.deltaTime*dashCurve.Evaluate(timeSinceDash/dashDuration)));
-            if (timeSinceDash/dashDuration == 1) {
+            if (timeSinceMove/dashDuration == 1) {
                 isDash = false;
             }
-            timeSinceDash++;
+            timeSinceMove++;
             return;
         }
+
+
+
+        //line/revive
+        if (Input.GetButtonDown(theDash) && cont.Line()) {
+            
+        }
+
+
+
+
+
         isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
         isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
         s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
