@@ -17,10 +17,9 @@ public class PlayerMove_2P : MonoBehaviour
     public float speed = 5;
     public AnimationCurve acc;
     public float accTime;
-    public int timeSinceIdle = 0;
-    public int timeSinceMove = 0;
+    int timeSinceIdle = 0;
+    int timeSinceMove = 0;
     public int dashCooldown;
-    int timeSinceDash = 0;
     public int dashDuration;
     public float dashSpeed;
     public AnimationCurve dashCurve;
@@ -28,11 +27,13 @@ public class PlayerMove_2P : MonoBehaviour
     public Transform otherP;
     public GameController cont;
     public LineRenderer line;
+    bool isLine;
 
     public bool isP1 = true;
     private string theHorizontal;
     private string theVertical;
     private string theDash;
+    private string theLine;
 
     // Start is called before the first frame update
     void Start()
@@ -41,11 +42,13 @@ public class PlayerMove_2P : MonoBehaviour
             theHorizontal = "p1_Horiz";
             theVertical = "p1_Vert";
             theDash = "Fire2";
+            theLine = "Fire3";
         } else
         {
             theHorizontal = "p2_Horiz";
             theVertical = "p2_Vert";
             theDash = "Fire1";
+            theLine = "Fire3";
         }
 
         s = GetComponentInChildren<SpriteRenderer>();
@@ -57,13 +60,12 @@ public class PlayerMove_2P : MonoBehaviour
         //dash
         if (Input.GetButtonDown(theDash) && cont.Dash()) {
             isDash = true;
-            timeSinceMove = 0;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
         }
             
         if (isDash) {
-            gameObject.transform.Translate(new Vector3(dashSpeed*dashDirection.x*Time.deltaTime*dashCurve.Evaluate(timeSinceDash/dashDuration), dashSpeed*dashDirection.y*Time.deltaTime*dashCurve.Evaluate(timeSinceDash/dashDuration)));
-            if (timeSinceMove/dashDuration == 1) {
+            gameObject.transform.Translate(new Vector3(dashSpeed*dashDirection.x*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*dashDirection.y*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration)));
+            if (cont.timeSinceDash/dashDuration >= 1) {
                 isDash = false;
             }
             timeSinceMove++;
@@ -73,8 +75,8 @@ public class PlayerMove_2P : MonoBehaviour
 
 
         //line/revive
-        if (Input.GetButtonDown(theDash) && cont.Line()) {
-            
+        if (Input.GetButtonDown(theLine) && cont.Line()) {
+            isLine = true;
         }
 
 

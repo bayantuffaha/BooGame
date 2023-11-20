@@ -9,6 +9,10 @@ public class GameController : MonoBehaviour
 
     public int candyCount;
 
+    public float timeSinceDash;
+
+    public int timeSinceLine;
+
     private void Awake()
     {
         //if a control already, delete
@@ -24,6 +28,10 @@ public class GameController : MonoBehaviour
             Destroy(gameObject);
         }
 
+    }
+
+    void Update() {
+        timeSinceDash = timeSinceDash + Time.deltaTime;
     }
 
     public bool Line(){
