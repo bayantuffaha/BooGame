@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     public static GameController control;
 
-    public int candyCount;
+    public double candyCount;
 
     public float timeSinceDash;
     public float timeSinceLine;
