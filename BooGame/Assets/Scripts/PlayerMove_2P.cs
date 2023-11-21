@@ -137,9 +137,9 @@ public class PlayerMove_2P : MonoBehaviour
     }
 
     public void Die() {
-        ZombieJumpScare ZJumpScare = GetComponent<ZombieJumpScare>();
+        // ZombieJumpScare ZJumpScare = GetComponent<ZombieJumpScare>();
 
-        ZJumpScare.ShowJumpScare();
+        // ZJumpScare.ShowJumpScare();
 
         gameObject.transform.SetParent(otherP);
         gameObject.transform.position = otherP.transform.position;
