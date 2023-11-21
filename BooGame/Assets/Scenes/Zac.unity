@@ -316,6 +316,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 1684709709}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
@@ -329,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashSpeed
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCooldown
@@ -338,6 +342,10 @@ PrefabInstance:
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashDuration
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: lineDuration
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: acc.m_Curve.Array.size
@@ -389,19 +397,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].inSlope
-      value: -0.027591502
+      value: -4.1081085
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].inSlope
-      value: -2.4017417
+      value: -3.662785
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].inSlope
-      value: 0.0000006471361
+      value: 0.32412276
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].outSlope
-      value: -0.027591502
+      value: -4.1081085
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].inWeight
@@ -409,23 +417,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].outSlope
-      value: -2.4017417
+      value: -3.662785
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].inWeight
-      value: 0.0909681
+      value: 0.17701072
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].outSlope
-      value: 0.0000006471361
+      value: 0.32412276
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].outWeight
-      value: 0.13135329
+      value: 0.05728861
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].outWeight
-      value: 0.061945483
+      value: 0.035397433
       objectReference: {fileID: 0}
     - target: {fileID: 7997400954793301890, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: m_RootOrder
@@ -683,9 +691,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601765d6b3f29804c842863a6939262f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyCount: 0
+  candyCount: 400
   timeSinceDash: 0
   timeSinceLine: 0
+  lineCost: 20
+  dashCost: 5
 --- !u!4 &850384870
 Transform:
   m_ObjectHideFlags: 0
@@ -722,6 +732,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 850384869}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: line
+      value: 
+      objectReference: {fileID: 1684709709}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
@@ -735,7 +749,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashSpeed
-      value: 50
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCooldown
@@ -744,6 +758,10 @@ PrefabInstance:
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashDuration
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: lineDuration
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: backIdle.Array.size
@@ -807,19 +825,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].inSlope
-      value: -0.027591502
+      value: -4.1081085
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].inSlope
-      value: -2.4017417
+      value: -3.662785
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].inSlope
-      value: 0.0000006471361
+      value: 0.32412276
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].outSlope
-      value: -0.027591502
+      value: -4.1081085
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].inWeight
@@ -827,23 +845,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].outSlope
-      value: -2.4017417
+      value: -3.662785
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].inWeight
-      value: 0.0909681
+      value: 0.17701072
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[2].outSlope
-      value: 0.0000006471361
+      value: 0.32412276
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[0].outWeight
-      value: 0.13135329
+      value: 0.05728861
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCurve.m_Curve.Array.data[1].outWeight
-      value: 0.061945483
+      value: 0.035397433
       objectReference: {fileID: 0}
     - target: {fileID: 7997400954793301890, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: m_RootOrder
