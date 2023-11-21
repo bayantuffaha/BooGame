@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour {
        public GameObject TimerText;
-       private int gameTime = 60;
+       private int gameTime = 300;
        private float timer = 0f;
 
        void Start () {
@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour {
             }
             if (gameTime <= 0){
                 gameTime = 0;
-                // GameObject.FindWithTag("GameController").GetComponent<EndScene>().setBool(true);s
+                SceneManager.LoadScene("EndLose");
             }   
       }
 
@@ -30,3 +30,4 @@ public class Timer : MonoBehaviour {
             timeTextTemp.text = "Timer:" + gameTime;
       }
 }
+

@@ -831,6 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1371716416}
+  mixer: {fileID: 0}
 --- !u!114 &1212814869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuUI: {fileID: 1371716416}
+  mixer: {fileID: 0}
 --- !u!1001 &1490948491
 PrefabInstance:
   m_ObjectHideFlags: 0

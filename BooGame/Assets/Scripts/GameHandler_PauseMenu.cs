@@ -57,6 +57,9 @@ public class GameHandler_PauseMenu : MonoBehaviour {
 
     bool GameIsPaused;
     [SerializeField] GameObject menuUI;
+    public AudioMixer mixer;
+    public static float volumeLevel = 1.0f;
+    private Slider sliderVolumeCtrl;
 
     void Start() {Resume();}
 
@@ -93,5 +96,10 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         #else
         Application.Quit();
         #endif
+    }
+
+    public void SetLevel (float sliderValue){
+        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+        volumeLevel = sliderValue;
     }
 }

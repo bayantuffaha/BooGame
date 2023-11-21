@@ -40,9 +40,9 @@ public class GameHandler : MonoBehaviour
       }
 
 
-    //   public void Credits() {
-    //         SceneManager.LoadScene("Credits");
-    //   }
+      public void Credits() {
+            SceneManager.LoadScene("Credits");
+      }
 
     public void RestartGame() {
         Time.timeScale = 1f;

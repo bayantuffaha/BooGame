@@ -360,6 +360,22 @@ PrefabInstance:
       propertyPath: m_Colors.m_NormalColor.r
       value: 0.8666667
       objectReference: {fileID: 0}
+    - target: {fileID: 3462589241915099434, guid: 8191f24106c0a704f9b16dffeb7a922b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 589025432}
+    - target: {fileID: 3462589241915099434, guid: 8191f24106c0a704f9b16dffeb7a922b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462589241915099434, guid: 8191f24106c0a704f9b16dffeb7a922b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462589241915099434, guid: 8191f24106c0a704f9b16dffeb7a922b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5265862140758063355, guid: 8191f24106c0a704f9b16dffeb7a922b, type: 3}
       propertyPath: m_Name
       value: button_Credits
