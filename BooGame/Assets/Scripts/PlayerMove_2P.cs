@@ -19,7 +19,6 @@ public class PlayerMove_2P : MonoBehaviour
     public float accTime;
     int timeSinceIdle = 0;
     int timeSinceMove = 0;
-    public int dashCooldown;
     public float dashDuration;
     public float lineDuration;
     public float dashSpeed;
@@ -28,7 +27,7 @@ public class PlayerMove_2P : MonoBehaviour
     public Transform otherP;
     public GameController cont;
     public LineRenderer line;
-    bool isLine;
+    public bool isLine;
 
     public bool isP1 = true;
     private string theHorizontal;
@@ -80,8 +79,13 @@ public class PlayerMove_2P : MonoBehaviour
         }
 
         if (isLine) {
-            line.SetPosition(0, otherP.transform.position);
-            line.SetPosition(1, gameObject.transform.position);
+            if(isP1){
+                line.SetPosition(0, otherP.transform.position);
+                line.SetPosition(1, gameObject.transform.position);
+            } else {
+                line.SetPosition(1, otherP.transform.position);
+                line.SetPosition(0, gameObject.transform.position);
+            }
             if (cont.timeSinceLine >= lineDuration){
                 isLine = false;
             }

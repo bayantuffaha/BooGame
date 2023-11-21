@@ -333,7 +333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashSpeed
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCooldown
@@ -341,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashDuration
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: lineDuration
@@ -694,6 +694,8 @@ MonoBehaviour:
   candyCount: 400
   timeSinceDash: 0
   timeSinceLine: 0
+  dashCooldown: 5
+  lineCooldown: 30
   lineCost: 20
   dashCost: 5
 --- !u!4 &850384870
@@ -749,7 +751,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashSpeed
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashCooldown
@@ -757,7 +759,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: dashDuration
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: lineDuration

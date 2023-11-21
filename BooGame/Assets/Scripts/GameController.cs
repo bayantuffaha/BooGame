@@ -12,6 +12,9 @@ public class GameController : MonoBehaviour
     public float timeSinceDash;
     public float timeSinceLine;
 
+    public float dashCooldown;
+    public float lineCooldown;
+
     public int lineCost;
     public int dashCost;
 
@@ -38,8 +41,8 @@ public class GameController : MonoBehaviour
     }
 
     public bool Line(){
-        if (candyCount >= lineCost) {
-            timeSinceLine = 0;
+        if (candyCount >= lineCost && (timeSinceLine > lineCooldown || timeSinceLine < 0)) {
+            timeSinceLine = -0.04f;
             candyCount-=lineCost;
             return true;
         }
@@ -47,7 +50,7 @@ public class GameController : MonoBehaviour
     }
 
     public bool Dash(){
-        if (candyCount >= dashCost) {
+        if (candyCount >= dashCost && timeSinceDash > dashCooldown) {
             timeSinceDash = 0;
             candyCount-=dashCost;
             return true;
