@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8899223425551356812}
   - component: {fileID: 2708595580855565206}
   - component: {fileID: 6445191825604746990}
+  - component: {fileID: 4797184563848432433}
   m_Layer: 0
   m_Name: Player_PREFAB
   m_TagString: Untagged
@@ -141,10 +142,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   accTime: 0
-  timeSinceIdle: 0
-  timeSinceMove: 0
-  dashCooldown: 0
   dashDuration: 0
+  lineDuration: 0
   dashSpeed: 0
   dashCurve:
     serializedVersion: 2
@@ -152,7 +151,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  otherP: {fileID: 0}
+  cont: {fileID: 0}
+  line: {fileID: 0}
+  isLine: 0
   isP1: 1
+--- !u!114 &4797184563848432433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4996499687675442501}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670e20bcf62c4c40b8f05c46dee9ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ZombieImage: {fileID: 0}
+  ZombieSound: {fileID: 0}
 --- !u!1 &6102825285422301639
 GameObject:
   m_ObjectHideFlags: 0

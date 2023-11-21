@@ -19,15 +19,15 @@ public class PlayerMove_2P : MonoBehaviour
     public float accTime;
     int timeSinceIdle = 0;
     int timeSinceMove = 0;
-    public int dashCooldown;
-    public int dashDuration;
+    public float dashDuration;
+    public float lineDuration;
     public float dashSpeed;
     public AnimationCurve dashCurve;
     Vector2 dashDirection;
     public Transform otherP;
     public GameController cont;
     public LineRenderer line;
-    bool isLine;
+    public bool isLine;
 
     public bool isP1 = true;
     private string theHorizontal;
@@ -65,11 +65,10 @@ public class PlayerMove_2P : MonoBehaviour
             
         if (isDash) {
             gameObject.transform.Translate(new Vector3(dashSpeed*dashDirection.x*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*dashDirection.y*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration)));
-            if (cont.timeSinceDash/dashDuration >= 1) {
+            if (cont.timeSinceDash >= dashDuration) {
                 isDash = false;
             }
             timeSinceMove++;
-            return;
         }
 
 
@@ -79,49 +78,69 @@ public class PlayerMove_2P : MonoBehaviour
             isLine = true;
         }
 
-
-
-
-
-        isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
-        isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
-        s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
-        if (Time.frameCount % 10 == 0) {
-            if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
-                if (isFacingDown) {
-                    s.sprite = frontIdle[animFrame];
-                } else {
-                    s.sprite = backIdle[animFrame];
-                }
-                timeSinceMove++;
-                timeSinceIdle = 0;
+        if (isLine) {
+            if(isP1){
+                line.SetPosition(0, otherP.transform.position);
+                line.SetPosition(1, gameObject.transform.position);
             } else {
-                if (timeSinceIdle % uPF > uPF/2) {
-                    if (isFacingDown) {
-                        s.sprite = frontRun[animFrame];
-                    } else {
-                        s.sprite = backRun[animFrame];
-                    }
-                } else {
+                line.SetPosition(1, otherP.transform.position);
+                line.SetPosition(0, gameObject.transform.position);
+            }
+            if (cont.timeSinceLine >= lineDuration){
+                isLine = false;
+            }
+        } else {
+            line.SetPosition(0, new Vector3(0,0,0));
+            line.SetPosition(1, new Vector3(0,0,0));
+        }
+
+
+
+        if (!isDash) {
+            isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
+            isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
+            s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
+            if (Time.frameCount % 10 == 0) {
+                if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
                     if (isFacingDown) {
                         s.sprite = frontIdle[animFrame];
                     } else {
                         s.sprite = backIdle[animFrame];
                     }
+                    timeSinceMove++;
+                    timeSinceIdle = 0;
+                } else {
+                    if (timeSinceIdle % uPF > uPF/2) {
+                        if (isFacingDown) {
+                            s.sprite = frontRun[animFrame];
+                        } else {
+                            s.sprite = backRun[animFrame];
+                        }
+                    } else {
+                        if (isFacingDown) {
+                            s.sprite = frontIdle[animFrame];
+                        } else {
+                            s.sprite = backIdle[animFrame];
+                        }
+                    }
+                    timeSinceIdle++;
+                    timeSinceMove = 0;
                 }
-                timeSinceIdle++;
-                timeSinceMove = 0;
+                animFrame = (animFrame+1)%4;
             }
-            animFrame = (animFrame+1)%4;
-        }
-        if (timeSinceIdle < accTime && timeSinceIdle > 0) {
-            gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
-        } else {
-            gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
+            if (timeSinceIdle < accTime && timeSinceIdle > 0) {
+                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
+            } else {
+                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
+            }
         }
     }
 
     public void Die() {
+        // ZombieJumpScare ZJumpScare = GetComponent<ZombieJumpScare>();
+
+        // ZJumpScare.ShowJumpScare();
+
         gameObject.transform.SetParent(otherP);
         gameObject.transform.position = otherP.transform.position;
         speed = 0;

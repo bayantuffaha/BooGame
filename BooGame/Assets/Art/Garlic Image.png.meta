@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:BooGame/Assets/Zombie.psd.meta
-guid: fe83894477f404859a4104af9d5602e1
-========
-guid: 8e44bd7abac53ac4194504c91aa978d2
->>>>>>>> f737dc1dbd4b2846816b325b90182c1a985390b3:BooGame/Assets/Art/ZombieJumpScare.jpg.meta
+guid: e986910ca338fb84d9702de931e52db3
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -99,19 +95,6 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1

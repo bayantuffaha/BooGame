@@ -7,11 +7,16 @@ public class GameController : MonoBehaviour
 
     public static GameController control;
 
-    public int candyCount;
+    public double candyCount;
 
     public float timeSinceDash;
+    public float timeSinceLine;
 
-    public int timeSinceLine;
+    public float dashCooldown;
+    public float lineCooldown;
+
+    public int lineCost;
+    public int dashCost;
 
     private void Awake()
     {
@@ -32,14 +37,25 @@ public class GameController : MonoBehaviour
 
     void Update() {
         timeSinceDash = timeSinceDash + Time.deltaTime;
+        timeSinceLine = timeSinceLine + Time.deltaTime;
     }
 
     public bool Line(){
-        return true;
+        if (candyCount >= lineCost && (timeSinceLine > lineCooldown || timeSinceLine < 0)) {
+            timeSinceLine = -0.04f;
+            candyCount-=lineCost;
+            return true;
+        }
+        return false;
     }
 
     public bool Dash(){
-        return true;
+        if (candyCount >= dashCost && timeSinceDash > dashCooldown) {
+            timeSinceDash = 0;
+            candyCount-=dashCost;
+            return true;
+        }
+        return false;
     }
 
 }

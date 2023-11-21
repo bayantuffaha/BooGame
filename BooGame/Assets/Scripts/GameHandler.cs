@@ -40,17 +40,17 @@ public class GameHandler : MonoBehaviour
       }
 
 
-    //   public void Credits() {
-    //         SceneManager.LoadScene("Credits");
-    //   }
+      public void Credits() {
+            SceneManager.LoadScene("Credits");
+      }
 
-//     public void RestartGame() {
-//         Time.timeScale = 1f;
-//         GameHandler_Pausemenu.GameisPaused = false;
-//             SceneManager.LoadScene("MainMenu");
-//             // Please also reset all static variables here, for new games!
-//         playerHealth = StartPlayerHealth;
-//   }
+    public void RestartGame() {
+        Time.timeScale = 1f;
+        // GameHandler_Pausemenu.GameisPaused = false;
+            SceneManager.LoadScene("MainMenu");
+            // Please also reset all static variables here, for new games!
+        // playerHealth = StartPlayerHealth;
+  }
 
 //   // Replay the Level where you died
 //     public void ReplayLastLevel() {

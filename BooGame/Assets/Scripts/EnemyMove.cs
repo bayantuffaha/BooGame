@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
 {
-    public float speed = 5f;
+    public float speed = 3f;
     public float detectionRange = 10f;
     public Transform player;
     private bool isChasing = false;
@@ -15,6 +15,11 @@ public class EnemyMove : MonoBehaviour
     public float patrolMinX = 0f;
     public float patrolMaxX = 10f;
     private bool isPatrollingRight = true;
+
+    //Variables to speed up the movement over time
+    private float minimumSpeed = 3f;
+    private float maximumSpeed = 6f;
+
 
     void Start()
     {
@@ -29,6 +34,10 @@ public class EnemyMove : MonoBehaviour
     {
         if (player != null)
         {
+            //increase speed
+            speed += .02f * Time.deltaTime;
+            speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
+
             if (CanSeePlayer())
             {
                 isChasing = true;
