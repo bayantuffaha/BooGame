@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 2b772fc9169dd5843b7a736bde3e7fff
   - enabled: 1
     path: Assets/Scenes/Build Halloween.unity
     guid: 1a5a4bf2415dbc34f9cfef4a567f9f9e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndWin.unity
     guid: b381f3e97a8688349a54de1f830086a3
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndLose.unity
     guid: 770587e445b7e2c4ea62ef0ee4fb3af2
   m_configObjects: {}
