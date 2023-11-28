@@ -114,25 +114,25 @@ MonoBehaviour:
   isFacingDown: 1
   isDash: 0
   frontIdle:
-  - {fileID: 21300000, guid: 866a9ece5256d9d4291ab65dce108a3a, type: 3}
-  - {fileID: 21300000, guid: 6b44298ae5151db458f3747982d85a39, type: 3}
-  - {fileID: 21300000, guid: a0a7063e66938f64c9ad8b022bf19f3b, type: 3}
-  - {fileID: 21300000, guid: 64ffafb28a833694e99491f3973a26b9, type: 3}
+  - {fileID: -942121789, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: 2093915270, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: -1281923457, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: -1037597374, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
   backIdle:
-  - {fileID: 21300000, guid: 539591ab701fede4faa71970955fe9cb, type: 3}
-  - {fileID: 21300000, guid: ad2e4fde0ee227448b172de1cd0b4f92, type: 3}
-  - {fileID: 21300000, guid: 32f183c65606a4b4bb642be9051b8d71, type: 3}
-  - {fileID: 21300000, guid: 69508eaa49d9b354dbef7cd32fa045c0, type: 3}
+  - {fileID: -639889871, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: 353357781, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: -1565178110, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: -949646038, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
   frontRun:
-  - {fileID: 21300000, guid: f1026fb1bba2ed140bc0ce5d36e988c8, type: 3}
-  - {fileID: 21300000, guid: c04d940e732b3714da2376e73bfda2a3, type: 3}
-  - {fileID: 21300000, guid: 5b58eb81b6e25444dab671ddfb020cbd, type: 3}
-  - {fileID: 21300000, guid: d7de48caa08ec9b428f4d08f1bcdfa4a, type: 3}
+  - {fileID: -136469414, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: 1750311981, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: 2107667928, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
+  - {fileID: -627770913, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
   backRun:
-  - {fileID: 21300000, guid: 0630132f8c99b4f4e9b59a4f7401ede6, type: 3}
-  - {fileID: 21300000, guid: ab537ac9b1f7fc045a94634e9171469e, type: 3}
-  - {fileID: 21300000, guid: 7d445898c5e99e7469b45beda36e3c33, type: 3}
-  - {fileID: 21300000, guid: 35c6dff1bec83cc4789ab0236e9d1373, type: 3}
+  - {fileID: 83601272, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: 1653886498, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: 526134646, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
+  - {fileID: -1009997010, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
   uPF: 10
   speed: 5
   acc:
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 2762290577388150288}
   - component: {fileID: 5760834174996920424}
   m_Layer: 0
-  m_Name: player_art
+  m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -243,12 +243,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 100
-  m_Sprite: {fileID: 21300000, guid: 866a9ece5256d9d4291ab65dce108a3a, type: 3}
+  m_Sprite: {fileID: -942121789, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 10.8, y: 10.8}
+  m_Size: {x: 3, y: 3}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
