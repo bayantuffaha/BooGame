@@ -1543,6 +1543,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2500035497269322775, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
+      propertyPath: menuUI
+      value: 
+      objectReference: {fileID: 1780579446806449331, guid: 08c35d5cc91bb6e48b3a08cc4fb673bb, type: 3}
     - target: {fileID: 5766120371773393555, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: m_Name
       value: GameController
