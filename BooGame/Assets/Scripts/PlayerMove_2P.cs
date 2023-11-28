@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SceneManagement = UnityEngine.SceneManagement;
 
 public class PlayerMove_2P : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class PlayerMove_2P : MonoBehaviour
     public GameController cont;
     public LineRenderer line;
     public bool isLine;
+
+    public int playersAlive = 2;
 
     public bool isP1 = true;
     private string theHorizontal;
@@ -146,6 +149,18 @@ public class PlayerMove_2P : MonoBehaviour
         speed = 0;
         dashDuration = 0;
         s.color = new Color(0f,0f,0f,0f);
+
+        // Decrement the playersAlive variable by one
+        playersAlive--;
+        // If no players are alive, switch to the loss scene
+        if (playersAlive <= 0 && GameController.control.candyCount >= 25)
+        {
+            SceneManagement.SceneManager.LoadScene("EndWin");
+        }
+        else if (playersAlive <= 0 && GameController.control.candyCount <= 25)
+        {
+            SceneManagement.SceneManager.LoadScene("EndLose");
+        }
     }
 
 }
