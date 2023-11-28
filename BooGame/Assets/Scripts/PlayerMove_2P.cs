@@ -149,6 +149,7 @@ public class PlayerMove_2P : MonoBehaviour
         speed = 0;
         dashDuration = 0;
         s.color = new Color(0f,0f,0f,0f);
+        s.enabled = false;
 
         // Decrement the playersAlive variable by one
         playersAlive--;
