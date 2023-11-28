@@ -61673,6 +61673,10 @@ PrefabInstance:
       propertyPath: cameraPlayer2
       value: 
       objectReference: {fileID: 877356537}
+    - target: {fileID: 3303129295904427611, guid: 9243980d5907f084097411fbbddce65f, type: 3}
+      propertyPath: cameraDistance.y
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6994943340615392192, guid: 9243980d5907f084097411fbbddce65f, type: 3}
       propertyPath: m_Name
       value: CameraManager
