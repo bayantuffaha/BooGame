@@ -1,6 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -39,6 +41,29 @@ public class GameController : MonoBehaviour
         timeSinceDash = timeSinceDash + Time.deltaTime;
         timeSinceLine = timeSinceLine + Time.deltaTime;
     }
+
+    public void StartGame() {
+        Debug.Log("starting the game!");
+        SceneManager.LoadScene("Build Halloween");
+    }  
+
+    public void QuitGame() {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
+
+    public void Credits() {
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void RestartGame() {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
 
     public bool Line(){
         if (candyCount >= lineCost && (timeSinceLine > lineCooldown || timeSinceLine < 0)) {
