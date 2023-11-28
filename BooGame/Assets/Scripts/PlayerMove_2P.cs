@@ -93,8 +93,8 @@ public class PlayerMove_2P : MonoBehaviour
                 isLine = false;
             }
         } else {
-            line.SetPosition(0, new Vector3(0,0,0));
-            line.SetPosition(1, new Vector3(0,0,0));
+            line.SetPosition(0, new Vector3(0,0,1));
+            line.SetPosition(1, new Vector3(0,0,1));
         }
 
 
