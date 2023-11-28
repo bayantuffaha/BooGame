@@ -37,7 +37,7 @@ public class GameHandler : MonoBehaviour
         #else
         Application.Quit();
         #endif
-      }
+    }
 
 
       public void Credits() {
