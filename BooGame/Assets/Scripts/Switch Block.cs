@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SwitchBlock : MonoBehaviour
 {
-    Button butt;
+    public Button butt;
     
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,6 @@ public class SwitchBlock : MonoBehaviour
     {
         GetComponentInChildren<SpriteRenderer>().flipX = butt.on;
         GetComponentInChildren<SpriteRenderer>().flipY = butt.on;
-        GetComponent<BoxCollider2D>().enabled = butt.on;
+        GetComponent<BoxCollider2D>().enabled = !butt.on;
     }
 }

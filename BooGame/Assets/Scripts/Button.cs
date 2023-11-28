@@ -19,13 +19,14 @@ public class Button : MonoBehaviour
         GetComponentInChildren<SpriteRenderer>().flipY = on;
     }
 
-    void OnColliderStay2D(Collision2D col){
+    void OnTriggerEnter2D(Collider2D col){
         if (col.gameObject.tag == "Player"){
             on = true;
         }
+        on = true;
     }
 
-    void OnColliderExit2D(Collision2D col){
+    void OnTriggerExit2D(Collider2D col){
         on = false;
     }
 }

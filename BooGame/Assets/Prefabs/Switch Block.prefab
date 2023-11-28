@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023186799534626055}
   - component: {fileID: 1386168020932884513}
+  - component: {fileID: 5325290346448892230}
   m_Layer: 0
   m_Name: Switch Block
   m_TagString: Untagged
@@ -76,8 +77,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &5325290346448892230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2217618355903109825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca0ee197c501c0449614f25991c8727, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  butt: {fileID: 0}
 --- !u!1 &8180606555390621913
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 8180606555390621913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2023186799534626055}
