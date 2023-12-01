@@ -144,6 +144,8 @@ public class PlayerMove_2P : MonoBehaviour
 
         // ZJumpScare.ShowJumpScare();
 
+        cont.ZombieScare();
+
         gameObject.transform.SetParent(otherP);
         gameObject.transform.position = otherP.transform.position;
         speed = 0;
