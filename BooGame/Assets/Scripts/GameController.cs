@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
 
     public int lineCost;
     public int dashCost;
+    // public GameObject player1;
+    // public GameObject player2;
 
     public Image ZombieImage; // Reference to the Image component
     public AudioSource ZombieSound; // Reference to the AudioSource component

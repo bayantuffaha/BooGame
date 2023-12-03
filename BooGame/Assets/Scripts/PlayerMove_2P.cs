@@ -20,7 +20,7 @@ public class PlayerMove_2P : MonoBehaviour
     public float accTime;
     int timeSinceIdle = 0;
     int timeSinceMove = 0;
-    public float dashDuration;
+    public float dashDuration = 0.1f;
     public float lineDuration;
     public float dashSpeed;
     public AnimationCurve dashCurve;
@@ -31,12 +31,15 @@ public class PlayerMove_2P : MonoBehaviour
     public bool isLine;
 
     public int playersAlive = 2;
-
+    public bool isAlive = true;
     public bool isP1 = true;
     private string theHorizontal;
     private string theVertical;
     private string theDash;
     private string theLine;
+    public int candiesToCollect = 20;
+    private double candiesAtDeath;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +63,7 @@ public class PlayerMove_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("num alive: " + playersAlive);
         //dash
         if (Input.GetButtonDown(theDash) && cont.Dash()) {
             isDash = true;
@@ -137,6 +141,31 @@ public class PlayerMove_2P : MonoBehaviour
                 gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
             }
         }
+
+        CheckRevivalCondition();
+    }
+
+    void CheckRevivalCondition()
+    {
+        if (playersAlive == 1)
+        {
+            if (GameController.control.candyCount - candiesAtDeath >= candiesToCollect)
+            {
+                RevivePlayer();
+            }
+        }
+    }
+
+    void RevivePlayer()
+    {
+        isAlive = true;
+        speed = 5;
+        dashDuration = 0.1f;
+        s.color = new Color(1f, 1f, 1f, 1f);
+        s.enabled = true;
+
+        playersAlive++;
+        gameObject.transform.SetParent(null);
     }
 
     public void Die() {
@@ -148,10 +177,13 @@ public class PlayerMove_2P : MonoBehaviour
 
         gameObject.transform.SetParent(otherP);
         gameObject.transform.position = otherP.transform.position;
+        isAlive = false;
         speed = 0;
         dashDuration = 0;
         s.color = new Color(0f,0f,0f,0f);
         s.enabled = false;
+
+        candiesAtDeath = GameController.control.candyCount;
 
         // Decrement the playersAlive variable by one
         playersAlive--;
