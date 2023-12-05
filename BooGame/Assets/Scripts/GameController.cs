@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour
         ZombieSound.Play();
 
         // The delay before the fade in seconds
-        float fadeDelay = 1f;
+        float fadeDelay = 0.8f;
 
         // Invoke the Coroutine that fades out the image after the delay
         Invoke("StartFadeOutImage", fadeDelay);
@@ -121,7 +121,7 @@ public class GameController : MonoBehaviour
     IEnumerator FadeOutImage()
     {
         // The duration of the fade in seconds
-        float fadeDuration = 5f;
+        float fadeDuration = 1.9f;
 
         // The initial alpha value of the image
         float startAlpha = 1f;

@@ -190,12 +190,22 @@ public class PlayerMove_2P : MonoBehaviour
         // If no players are alive, switch to the loss scene
         if (playersAlive <= 0 && GameController.control.candyCount >= 25)
         {
-            SceneManagement.SceneManager.LoadScene("EndWin");
+            // Start a coroutine to load the EndWin scene after 3 seconds
+            StartCoroutine(LoadSceneWithDelay("EndWin", 3f));
         }
         else if (playersAlive <= 0 && GameController.control.candyCount <= 25)
         {
-            SceneManagement.SceneManager.LoadScene("EndLose");
+            // Start a coroutine to load the EndLose scene after 3 seconds
+            StartCoroutine(LoadSceneWithDelay("EndLose", 3f));
+        }
+
+        // Define a coroutine that takes a scene name and a delay time as parameters
+        IEnumerator LoadSceneWithDelay(string sceneName, float delayTime)
+        {
+            // Wait for the specified amount of time
+            yield return new WaitForSeconds(delayTime);
+            // Load the scene
+            SceneManagement.SceneManager.LoadScene(sceneName);
         }
     }
-
 }
