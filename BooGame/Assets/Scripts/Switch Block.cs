@@ -5,6 +5,8 @@ using UnityEngine;
 public class SwitchBlock : MonoBehaviour
 {
     public Button butt;
+    bool enab;
+    bool last;
     
     // Start is called before the first frame update
     void Start()
@@ -15,8 +17,12 @@ public class SwitchBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponentInChildren<SpriteRenderer>().flipX = butt.on;
-        GetComponentInChildren<SpriteRenderer>().flipY = butt.on;
-        GetComponent<BoxCollider2D>().enabled = !butt.on;
+        if (!last&&butt.on) {
+            enab = !enab;
+        }
+        GetComponentInChildren<SpriteRenderer>().flipX = enab;
+        GetComponentInChildren<SpriteRenderer>().flipY = enab;
+        GetComponent<BoxCollider2D>().enabled = !enab;
+        last = butt.on;
     }
 }

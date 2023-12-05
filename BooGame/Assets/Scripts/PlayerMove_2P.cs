@@ -102,7 +102,7 @@ public class PlayerMove_2P : MonoBehaviour
         if (!isDash) {
             isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
             isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
-            s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
+            s.flipX = !isFacingRight;
             if (Time.frameCount % 10 == 0) {
                 if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
                     if (isFacingDown) {
