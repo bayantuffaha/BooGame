@@ -5,13 +5,15 @@ using UnityEngine;
 public class candySpawn : MonoBehaviour
 {
     public GameObject CandyPrefab;
+    public Vector2 max;
+    public Vector2 min;
 
     // Start is called before the first frame update
     void Start()
     {
         for(int i = 0; i < 99; i++)
         {
-            Vector3 randomSpawnPos = new Vector3(Random.Range(-30, 30), Random.Range(-30, 30));
+            Vector3 randomSpawnPos = new Vector3(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
             Instantiate(CandyPrefab, randomSpawnPos, Quaternion.identity);
         }
     }
