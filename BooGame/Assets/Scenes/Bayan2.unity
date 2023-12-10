@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4820039702558152721, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: bcb501d3519df344aab37b14c33293fd, type: 2}
     - target: {fileID: 8473939106226963724, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
       propertyPath: m_Name
       value: managers
@@ -1203,6 +1207,26 @@ PrefabInstance:
     - target: {fileID: 288989585734538693, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1976715304}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameHandler_PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2510931807361360469, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
       propertyPath: m_Name

@@ -215,6 +215,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
       objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 745679451}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GameHandler_PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1258846257549152950, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2510931807361360469, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
       propertyPath: m_Name
       value: Pause_Canvas
@@ -4665,6 +4685,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4820039702558152721, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: bcb501d3519df344aab37b14c33293fd, type: 2}
     - target: {fileID: 8473939106226963724, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
       propertyPath: m_Name
       value: managers
@@ -4931,7 +4955,7 @@ PrefabInstance:
       objectReference: {fileID: 1572411581}
     - target: {fileID: 566832642100129481, guid: a00b172d66f7de749a8291da6ec25c69, type: 3}
       propertyPath: candiesToCollect
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2016206802507253090, guid: a00b172d66f7de749a8291da6ec25c69, type: 3}
       propertyPath: m_Name
@@ -5147,6 +5171,10 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1213224451}
+    - target: {fileID: 487952191954619623, guid: a8bb66810b83f354f81c53479a0646da, type: 3}
+      propertyPath: candiesToCollect
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1937471161546221388, guid: a8bb66810b83f354f81c53479a0646da, type: 3}
       propertyPath: m_Name
       value: Player2
