@@ -163,6 +163,7 @@ public class PlayerMove_2P : MonoBehaviour
         dashDuration = 0.1f;
         s.color = new Color(1f, 1f, 1f, 1f);
         s.enabled = true;
+        gameObject.GetComponent<Collider2D>().enabled = true;
 
         playersAlive++;
         gameObject.transform.SetParent(null);
@@ -182,18 +183,19 @@ public class PlayerMove_2P : MonoBehaviour
         dashDuration = 0;
         s.color = new Color(0f,0f,0f,0f);
         s.enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = false;
 
         candiesAtDeath = GameController.control.candyCount;
 
         // Decrement the playersAlive variable by one
         playersAlive--;
         // If no players are alive, switch to the loss scene
-        if (playersAlive <= 0 && GameController.control.candyCount >= 25)
+        /*if (playersAlive <= 0 && GameController.control.candyCount >= 25)
         {
             // Start a coroutine to load the EndWin scene after some seconds
             StartCoroutine(LoadSceneWithDelay("EndWin", 3f));
         }
-        else if (playersAlive <= 0 && GameController.control.candyCount <= 25)
+        else */if (playersAlive <= 0 && GameController.control.candyCount <= 25)
         {
             // Start a coroutine to load the EndLose scene after some seconds
             StartCoroutine(LoadSceneWithDelay("EndLose", 3f));

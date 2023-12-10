@@ -28,7 +28,7 @@ public class GameHandler : MonoBehaviour
 
     public void StartGame() {
         Debug.Log("starting the game!");
-        SceneManager.LoadScene("Build Halloween");
+        SceneManager.LoadScene("Tutorial");
     }    
 
     public void QuitGame() {
