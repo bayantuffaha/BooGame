@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - GameHandler
   - PauseMenuSlider
+  - Ooze
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,7 @@ public class EnemyMove : MonoBehaviour
     public Transform player;
     private bool isChasing = false;
     public LayerMask obstacleLayerMask;
+    float sticky = 0;
 
     public LineRenderer lineOfSight;
     public bool isAttacking = false;
@@ -66,7 +67,7 @@ public class EnemyMove : MonoBehaviour
         {
             //Debug.Log("Chasing player");
             // Move towards the player
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
         }
     }
 
@@ -147,6 +148,18 @@ void Patrolling()
         if (collision.gameObject.CompareTag("Player"))
         {
             isAttacking = false;
+        }
+        if(collision.gameObject.CompareTag("Ooze"))
+        {
+            sticky = 0;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Ooze"))
+        {
+            sticky = col.gameObject.GetComponent<Syrup>().sticky;
         }
     }
 

@@ -29,6 +29,9 @@ public class PlayerMove_2P : MonoBehaviour
     public GameController cont;
     public LineRenderer line;
     public bool isLine;
+    float sticky;
+
+    public GameObject holding;
 
     public int playersAlive = 2;
     public bool isAlive = true;
@@ -136,9 +139,9 @@ public class PlayerMove_2P : MonoBehaviour
                 animFrame = (animFrame+1)%4;
             }
             if (timeSinceIdle < accTime && timeSinceIdle > 0) {
-                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
+                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*(1-sticky)*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
             } else {
-                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*Time.deltaTime, Input.GetAxis(theVertical)*speed*Time.deltaTime));
+                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*Time.deltaTime, Input.GetAxis(theVertical)*speed*(1-sticky)*Time.deltaTime));
             }
         }
 
@@ -167,6 +170,22 @@ public class PlayerMove_2P : MonoBehaviour
 
         playersAlive++;
         gameObject.transform.SetParent(null);
+    }
+
+    public void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Ooze"))
+        {
+            sticky = 0;
+        }
+    }
+
+    void OnCollisionStay2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Ooze"))
+        {
+            sticky = col.gameObject.GetComponent<Syrup>().sticky;
+        }
     }
 
     public void Die() {

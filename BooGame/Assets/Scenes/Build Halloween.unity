@@ -4833,14 +4833,30 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 406412949}
+    - target: {fileID: 304825638305318849, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 385724038251938489, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 458446756279800534, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 335573524}
+    - target: {fileID: 715484494973620676, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 767915848816199332, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 406412949}
+    - target: {fileID: 848623813896583798, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1134226899198158474, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
@@ -4901,10 +4917,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemies
       objectReference: {fileID: 0}
+    - target: {fileID: 4923005369847492554, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4989076846557696792, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 406412949}
+    - target: {fileID: 5259402262668760916, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5301831632740346758, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
@@ -4913,10 +4937,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 335573524}
+    - target: {fileID: 6146612871669672318, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6368166797511277658, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 335573524}
+    - target: {fileID: 7389710690309889735, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: m_ForceSendLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8984754570458450913, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: m_RootOrder
       value: 16
