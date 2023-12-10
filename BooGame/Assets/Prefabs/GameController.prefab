@@ -52,6 +52,8 @@ MonoBehaviour:
   lineCooldown: 0
   lineCost: 0
   dashCost: 0
+  ZombieImage: {fileID: 0}
+  ZombieSound: {fileID: 0}
 --- !u!114 &-2500035497269322775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,5 +66,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f412083476b64e4398b143f51d9a961, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI: {fileID: 0}
-  mixer: {fileID: 0}
+  pauseMenuUI: {fileID: 1780579446806449331, guid: 08c35d5cc91bb6e48b3a08cc4fb673bb, type: 3}
+  mixer: {fileID: 24100000, guid: bcb501d3519df344aab37b14c33293fd, type: 2}
