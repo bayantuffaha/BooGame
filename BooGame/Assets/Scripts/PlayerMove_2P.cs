@@ -31,7 +31,8 @@ public class PlayerMove_2P : MonoBehaviour
     public bool isLine;
     float sticky;
 
-    public GameObject holding;
+    public GameObject holding = null;
+    public float holdRange = 5;
 
     public int playersAlive = 2;
     public bool isAlive = true;
@@ -81,6 +82,12 @@ public class PlayerMove_2P : MonoBehaviour
             timeSinceMove++;
         }
 
+        if(Input.GetKeyDown("u") && isP1){
+            Hold();
+        } else if (Input.GetKeyDown("i")){
+            Hold();
+        }
+
 
 
         //line/revive
@@ -106,7 +113,7 @@ public class PlayerMove_2P : MonoBehaviour
 
 
 
-        if (!isDash) {
+        if (!isDash && !(otherP == gameObject.transform.parent)) {
             isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
             isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
             s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
@@ -227,6 +234,38 @@ public class PlayerMove_2P : MonoBehaviour
             yield return new WaitForSeconds(delayTime);
             // Load the scene
             SceneManagement.SceneManager.LoadScene(sceneName);
+        }
+    }
+
+    public void Hold()
+    {
+        if(holding == null){
+            GameObject[] gos;
+            gos = GameObject.FindGameObjectsWithTag("Player");
+            GameObject closest = null;
+            float distance = Mathf.Infinity;
+            Vector3 position = transform.position;
+            foreach (GameObject go in gos)
+            {
+                Vector3 diff = go.transform.position - position;
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance)
+                {
+                    closest = go;
+                    distance = curDistance;
+                }
+            }
+            if(distance < holdRange){
+                holding = closest;
+            }
+            holding.transform.parent = gameObject.transform;
+            holding.transform.localPosition = new Vector2(0f,1f);
+            holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
+        } else {
+            holding.transform.localPosition = new Vector2(0f,0f);
+            holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(Input.GetAxis(theHorizontal) * 10f,Input.GetAxis(theVertical) * 10f));
+            holding.transform.parent = null;
+            holding = null;
         }
     }
 }
