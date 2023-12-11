@@ -135,7 +135,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -206,6 +206,8 @@ MonoBehaviour:
   cont: {fileID: 0}
   line: {fileID: 0}
   isLine: 0
+  holding: {fileID: 0}
+  holdRange: 5
   playersAlive: 2
   isAlive: 1
   isP1: 1

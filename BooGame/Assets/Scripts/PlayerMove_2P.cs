@@ -69,13 +69,13 @@ public class PlayerMove_2P : MonoBehaviour
     {
         Debug.Log("num alive: " + playersAlive);
         //dash
-        if (Input.GetButtonDown(theDash) && cont.Dash()) {
+        if (Input.GetButtonDown(theDash) && !(otherP == gameObject.transform.parent) && cont.Dash()) {
             isDash = true;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
         }
             
         if (isDash) {
-            gameObject.transform.Translate(new Vector3(dashSpeed*dashDirection.x*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*dashDirection.y*Time.deltaTime*dashCurve.Evaluate(cont.timeSinceDash/dashDuration)));
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(dashSpeed*dashDirection.x*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*dashDirection.y*dashCurve.Evaluate(cont.timeSinceDash/dashDuration));
             if (cont.timeSinceDash >= dashDuration) {
                 isDash = false;
             }
@@ -146,10 +146,15 @@ public class PlayerMove_2P : MonoBehaviour
                 animFrame = (animFrame+1)%4;
             }
             if (timeSinceIdle < accTime && timeSinceIdle > 0) {
-                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*(1-sticky)*Time.deltaTime*acc.Evaluate(timeSinceIdle/accTime)));
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*(1-sticky)*acc.Evaluate(timeSinceIdle/accTime));
             } else {
-                gameObject.transform.Translate(new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*Time.deltaTime, Input.GetAxis(theVertical)*speed*(1-sticky)*Time.deltaTime));
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky));
             }
+        }
+
+        if(otherP == holding.transform){
+            otherP.position = new Vector2(0f,0f);
+            otherP.parent = gameObject.transform;
         }
 
         CheckRevivalCondition();
