@@ -73,21 +73,28 @@ public class EnemyMove : MonoBehaviour
 
 void Patrolling()
 {
-    // Move the enemy based on its current direction
-    Vector3 movement = isPatrollingRight ? Vector3.right : Vector3.left;
-    transform.Translate(movement * speed * Time.deltaTime);
+    // // Move the enemy based on its current direction
+    // Vector3 movement = isPatrollingRight ? Vector3.right : Vector3.left;
+    // transform.Translate(movement * speed * Time.deltaTime);
 
-    // Check if the enemy reached the patrol boundaries
-    if (transform.position.x >= patrolMaxX && isPatrollingRight)
-    {
-        // If moving right and reached the right boundary, flip the direction
-        isPatrollingRight = false;
-    }
-    else if (transform.position.x <= patrolMinX && !isPatrollingRight)
-    {
-        // If moving left and reached the left boundary, flip the direction
-        isPatrollingRight = true;
-    }
+    // // Check if the enemy reached the patrol boundaries
+    // if (transform.position.x >= patrolMaxX && isPatrollingRight)
+    // {
+    //     // If moving right and reached the right boundary, flip the direction
+    //     isPatrollingRight = false;
+    // }
+    // else if (transform.position.x <= patrolMinX && !isPatrollingRight)
+    // {
+    //     // If moving left and reached the left boundary, flip the direction
+    //     isPatrollingRight = true;
+    // }
+
+    // Use Perlin noise to create smooth, random movement
+    float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
+    float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
+    Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed
+
+    transform.Translate(movement * speed * Time.deltaTime);
 }
 
 

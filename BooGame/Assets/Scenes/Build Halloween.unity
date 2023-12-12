@@ -5026,11 +5026,19 @@ PrefabInstance:
       propertyPath: m_ForceSendLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 383985692842523411, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 335573524}
     - target: {fileID: 385724038251938489, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: m_ForceSendLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 458446756279800534, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 335573524}
+    - target: {fileID: 613383327320698134, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 335573524}
@@ -5138,6 +5146,10 @@ PrefabInstance:
       propertyPath: m_ForceSendLayers.m_Bits
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7485900681052217877, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 335573524}
     - target: {fileID: 8984754570458450913, guid: 475a96ae334486c42b79314539bc02bf, type: 3}
       propertyPath: m_RootOrder
       value: 16
