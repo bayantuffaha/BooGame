@@ -16,19 +16,19 @@ public class PlayerMove_2P : MonoBehaviour
     int animFrame = 0;
     SpriteRenderer s;
     public float speed = 5;
-    public AnimationCurve acc;
+    //public AnimationCurve acc;
     public float accTime;
     int timeSinceIdle = 0;
     int timeSinceMove = 0;
     public float dashDuration = 0.1f;
-    public float lineDuration;
+    //public float lineDuration;
     public float dashSpeed;
     public AnimationCurve dashCurve;
     Vector2 dashDirection;
-    public Transform otherP;
+    public PlayerMove_2P otherP;
     public GameController cont;
-    public LineRenderer line;
-    public bool isLine;
+    //public LineRenderer line;
+    //public bool isLine;
     float sticky;
 
     public GameObject holding = null;
@@ -67,9 +67,9 @@ public class PlayerMove_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("num alive: " + playersAlive);
+        //Debug.Log("num alive: " + playersAlive);
         //dash
-        if (Input.GetButtonDown(theDash) && !(otherP == gameObject.transform.parent) && cont.Dash()) {
+        if (Input.GetButtonDown(theDash) && !(otherP.holding == gameObject) && cont.Dash()) {
             isDash = true;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
         }
@@ -82,15 +82,9 @@ public class PlayerMove_2P : MonoBehaviour
             timeSinceMove++;
         }
 
-        if(Input.GetKeyDown("u") && isP1){
-            Hold();
-        } else if (Input.GetKeyDown("i")){
-            Hold();
-        }
 
 
-
-        //line/revive
+        /*line/revive
         if (Input.GetButtonDown(theLine) && cont.Line()) {
             isLine = true;
         }
@@ -109,14 +103,14 @@ public class PlayerMove_2P : MonoBehaviour
         } else {
             line.SetPosition(0, new Vector3(0,0,1));
             line.SetPosition(1, new Vector3(0,0,1));
-        }
+        }*/
 
 
 
-        if (!isDash && !(otherP == gameObject.transform.parent)) {
+        if (!isDash) {
             isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
             isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
-            s.flipX = !((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
+            s.flipX = !isFacingRight; //!((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
             if (Time.frameCount % 10 == 0) {
                 if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
                     if (isFacingDown) {
@@ -145,16 +139,20 @@ public class PlayerMove_2P : MonoBehaviour
                 }
                 animFrame = (animFrame+1)%4;
             }
-            if (timeSinceIdle < accTime && timeSinceIdle > 0) {
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky)*acc.Evaluate(timeSinceIdle/accTime), Input.GetAxis(theVertical)*speed*(1-sticky)*acc.Evaluate(timeSinceIdle/accTime));
-            } else {
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky));
+
+            if(otherP.holding != gameObject){
+                if(Input.GetKeyDown("u") && isP1){
+                    Hold();
+                } else if (Input.GetKeyDown("i") && !isP1){
+                    Hold();
+                }
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, new Vector2(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky)), accTime);
             }
         }
 
-        if(otherP == holding.transform){
-            otherP.position = new Vector2(0f,0f);
-            otherP.parent = gameObject.transform;
+        if(holding != null){
+            holding.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+2f);
+            holding.transform.parent = gameObject.transform;
         }
 
         CheckRevivalCondition();
@@ -207,7 +205,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         cont.ZombieScare();
 
-        gameObject.transform.SetParent(otherP);
+        gameObject.transform.SetParent(otherP.transform);
         gameObject.transform.position = otherP.transform.position;
         isAlive = false;
         speed = 0;
@@ -242,6 +240,10 @@ public class PlayerMove_2P : MonoBehaviour
         }
     }
 
+    public static int BooltoInt(bool b){
+        if(b){return 1;}else{return 0;}
+    }
+
     public void Hold()
     {
         if(holding == null){
@@ -252,6 +254,7 @@ public class PlayerMove_2P : MonoBehaviour
             Vector3 position = transform.position;
             foreach (GameObject go in gos)
             {
+                if(go==gameObject){continue;}
                 Vector3 diff = go.transform.position - position;
                 float curDistance = diff.sqrMagnitude;
                 if (curDistance < distance)
@@ -262,13 +265,13 @@ public class PlayerMove_2P : MonoBehaviour
             }
             if(distance < holdRange){
                 holding = closest;
-            }
+            } else {return;}
             holding.transform.parent = gameObject.transform;
-            holding.transform.localPosition = new Vector2(0f,1f);
+            holding.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+2f);
             holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
         } else {
             holding.transform.localPosition = new Vector2(0f,0f);
-            holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(Input.GetAxis(theHorizontal) * 10f,Input.GetAxis(theVertical) * 10f));
+            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 100f + 10f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 100f + 10f * (BooltoInt(!isFacingDown) - 0.5f));
             holding.transform.parent = null;
             holding = null;
         }
