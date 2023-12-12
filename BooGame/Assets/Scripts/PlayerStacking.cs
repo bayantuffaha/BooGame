@@ -8,6 +8,8 @@ public class PlayerStacking : MonoBehaviour
     public bool isP1;
     string stackButton;
 
+    private bool stacked;
+
     // Start is called before the first frame update
     //sets the button depending on which player is activating.
     void Start()
@@ -20,23 +22,31 @@ public class PlayerStacking : MonoBehaviour
         {
             stackButton = "Stack_p2";
         }
+
+        stacked = false;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log("button was pressed K");
-        }
-        
-        if(Input.GetButtonDown(stackButton))
+    {        
+        if(Input.GetButtonDown(stackButton) && !stacked)
         {
             otherPlayer.transform.position = transform.position;
             otherPlayer.transform.parent = transform;
             otherPlayer.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            // otherPlayer.GetComponentInChildren<PlayerMove_2P>.enabled = false;
+            otherPlayer.GetComponent<PlayerMove_2P>().enabled = false;
 
+            //switch sprite to a stacked sprite
+        }
+        else if (Input.GetButtonDown(stackButton) && stacked)
+        {
+            //need to detach child from this, reactivate sprite and movement
+            //otherPlayer.transform.parent = transform;
+
+            otherPlayer.GetComponentInChildren<SpriteRenderer>().enabled = true;
+            otherPlayer.GetComponent<PlayerMove_2P>().enabled = true;
+
+            //switch sprite to a normal sprites
         }
     }
 }
