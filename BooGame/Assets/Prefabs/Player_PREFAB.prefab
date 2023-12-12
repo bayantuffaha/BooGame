@@ -537,6 +537,7 @@ MonoBehaviour:
   isAlive: 1
   isP1: 1
   candiesToCollect: 20
+  bottlePrefab: {fileID: 5179372102861423229, guid: b1701a2814b7b3e4582e4cac98ea7f0c, type: 3}
 --- !u!114 &4797184563848432433
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class PlayerMove_2P : MonoBehaviour
     private string theLine;
     public int candiesToCollect = 20;
     private double candiesAtDeath;
+    public GameObject bottlePrefab;
     
 
     // Start is called before the first frame update
@@ -106,6 +107,12 @@ public class PlayerMove_2P : MonoBehaviour
             line.SetPosition(1, new Vector3(0,0,1));
         }*/
 
+        if(Input.GetKeyDown(".") && isP1){
+                Bottle();
+            } else if (Input.GetKeyDown("e") && !isP1){
+                Bottle();
+            }
+
 
 
         if (!isDash) {
@@ -157,9 +164,9 @@ public class PlayerMove_2P : MonoBehaviour
             }
             
             if(otherP.holding != gameObject){
-                if(Input.GetKeyDown("u") && isP1){
+                if(Input.GetKeyDown("/") && isP1){
                     Hold();
-                } else if (Input.GetKeyDown("i") && !isP1){
+                } else if (Input.GetKeyDown("q") && !isP1){
                     Hold();
                 }
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, new Vector2(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky)), accTime);
@@ -260,6 +267,12 @@ public class PlayerMove_2P : MonoBehaviour
         if(b){return 1;}else{return 0;}
     }
 
+    public void Bottle(){
+        GameObject b = Instantiate(bottlePrefab);
+        b.transform.position = new Vector2(gameObject.transform.position.x + 2f * (BooltoInt(isFacingRight) - 0.5f), gameObject.transform.position.y + 2f * (BooltoInt(!isFacingDown) - 0.5f));
+        b.GetComponent<Bottle>().direction = new Vector2(Input.GetAxis(theHorizontal) + (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) + (BooltoInt(!isFacingDown) - 0.5f));
+    }
+    
     public void Hold()
     {
         if(holding == null){
