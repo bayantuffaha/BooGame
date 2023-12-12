@@ -12,6 +12,7 @@ public class PlayerMove_2P : MonoBehaviour
     public Sprite[] backIdle;
     public Sprite[] frontRun;
     public Sprite[] backRun;
+    public SpriteRenderer[] anims;
     public int uPF;
     int animFrame = 0;
     SpriteRenderer s;
@@ -110,36 +111,51 @@ public class PlayerMove_2P : MonoBehaviour
         if (!isDash) {
             isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
             isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
-            s.flipX = !isFacingRight; //!((isFacingRight && isFacingDown) || (!isFacingRight && !isFacingDown));
-            if (Time.frameCount % 10 == 0) {
+            foreach(SpriteRenderer i in anims){
+                i.enabled = false;
+                i.flipX = !isFacingRight;
+            }
+            
+            if (holding == null){
                 if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
                     if (isFacingDown) {
-                        s.sprite = frontIdle[animFrame];
+                        anims[0].enabled = true;
                     } else {
-                        s.sprite = backIdle[animFrame];
+                        anims[1].enabled = true;
                     }
                     timeSinceMove++;
                     timeSinceIdle = 0;
                 } else {
-                    if (timeSinceIdle % uPF > uPF/2) {
-                        if (isFacingDown) {
-                            s.sprite = frontRun[animFrame];
-                        } else {
-                            s.sprite = backRun[animFrame];
-                        }
+                    if (isFacingDown) {
+                        anims[2].enabled = true;
                     } else {
-                        if (isFacingDown) {
-                            s.sprite = frontIdle[animFrame];
-                        } else {
-                            s.sprite = backIdle[animFrame];
-                        }
+                        anims[3].enabled = true;
                     }
                     timeSinceIdle++;
                     timeSinceMove = 0;
                 }
-                animFrame = (animFrame+1)%4;
+            } else {
+                if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
+                    if (isFacingDown) {
+                        anims[4].enabled = true;
+                    } else {
+                        anims[5].enabled = true;
+                        anims[5].flipX = isFacingRight;
+                    }
+                    timeSinceMove++;
+                    timeSinceIdle = 0;
+                } else {
+                    if (isFacingDown) {
+                        anims[6].enabled = true;
+                    } else {
+                        anims[7].enabled = true;
+                        anims[5].flipX = isFacingRight;
+                    }
+                    timeSinceIdle++;
+                    timeSinceMove = 0;
+                }
             }
-
+            
             if(otherP.holding != gameObject){
                 if(Input.GetKeyDown("u") && isP1){
                     Hold();
