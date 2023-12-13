@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2b772fc9169dd5843b7a736bde3e7fff
   - enabled: 1
+    path: Assets/Scenes/TestCameraScene.unity
+    guid: 623e6500e17100c44b91ef2f4b5e8cd2
+  - enabled: 1
     path: Assets/Scenes/Build Halloween.unity
     guid: 1a5a4bf2415dbc34f9cfef4a567f9f9e
   - enabled: 1
