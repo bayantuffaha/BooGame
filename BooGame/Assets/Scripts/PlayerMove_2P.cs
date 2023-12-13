@@ -69,6 +69,23 @@ public class PlayerMove_2P : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(holding != null){
+            holding.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+2f);
+            holding.transform.parent = gameObject.transform;
+        }
+
+        CheckRevivalCondition();
+
+        foreach(SpriteRenderer i in anims){
+            i.enabled = false;
+            i.flipX = !isFacingRight;
+        }
+        
+        if(!isAlive){
+            anims[8].enabled;
+            return;
+        }
+
         //Debug.Log("num alive: " + playersAlive);
         //dash
         if (Input.GetButtonDown(theDash) && !(otherP.holding == gameObject) && cont.Dash()) {
@@ -118,10 +135,6 @@ public class PlayerMove_2P : MonoBehaviour
         if (!isDash) {
             isFacingRight = Input.GetAxis(theHorizontal)>0 || (!(Input.GetAxis(theHorizontal)<0) && isFacingRight);
             isFacingDown = Input.GetAxis(theVertical)<0 || (!(Input.GetAxis(theVertical)>0) && isFacingDown);
-            foreach(SpriteRenderer i in anims){
-                i.enabled = false;
-                i.flipX = !isFacingRight;
-            }
             
             if (holding == null){
                 if (Input.GetAxis(theVertical)==0 && Input.GetAxis(theHorizontal)==0) {
@@ -156,7 +169,7 @@ public class PlayerMove_2P : MonoBehaviour
                         anims[6].enabled = true;
                     } else {
                         anims[7].enabled = true;
-                        anims[5].flipX = isFacingRight;
+                        anims[7].flipX = isFacingRight;
                     }
                     timeSinceIdle++;
                     timeSinceMove = 0;
@@ -173,12 +186,6 @@ public class PlayerMove_2P : MonoBehaviour
             }
         }
 
-        if(holding != null){
-            holding.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+2f);
-            holding.transform.parent = gameObject.transform;
-        }
-
-        CheckRevivalCondition();
     }
 
     void CheckRevivalCondition()

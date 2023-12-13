@@ -520,7 +520,7 @@ MonoBehaviour:
   - {fileID: 5408530384681146012}
   uPF: 10
   speed: 5
-  accTime: 0
+  accTime: 0.1
   dashDuration: 0
   dashSpeed: 0
   dashCurve:

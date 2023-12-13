@@ -1121,6 +1121,14 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: anims.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+      propertyPath: anims.Array.data[8]
+      value: 
+      objectReference: {fileID: 1238116945}
+    - target: {fileID: 6445191825604746990, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: backIdle.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -1378,6 +1386,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1238116945 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5408530384681146012, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
+  m_PrefabInstance: {fileID: 948342526}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1406109667
 GameObject:
   m_ObjectHideFlags: 0
