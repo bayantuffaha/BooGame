@@ -81,9 +81,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23843db2c0fbf34296e0e3945f5e5ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   direction: {x: 0, y: 0}
-  lifespan: 1
+  lifespan: 0.5
   SYRUP: {fileID: 3007131645790859016, guid: b9b9f41eed377d3409f6a536a3787f4e, type: 3}
 --- !u!1 &6680574836374454884
 GameObject:

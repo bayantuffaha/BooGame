@@ -8,13 +8,8 @@ public class PlayerMove_2P : MonoBehaviour
     public bool isFacingRight = true;
     public bool isFacingDown = true;
     public bool isDash = false;
-    public Sprite[] frontIdle;
-    public Sprite[] backIdle;
-    public Sprite[] frontRun;
-    public Sprite[] backRun;
     public SpriteRenderer[] anims;
-    public int uPF;
-    int animFrame = 0;
+    //public int uPF;
     SpriteRenderer s;
     public float speed = 5;
     //public AnimationCurve acc;
@@ -38,10 +33,12 @@ public class PlayerMove_2P : MonoBehaviour
     public int playersAlive = 2;
     public bool isAlive = true;
     public bool isP1 = true;
-    private string theHorizontal;
-    private string theVertical;
-    private string theDash;
-    private string theLine;
+    string theHorizontal;
+    string theVertical;
+    string theDash;
+    string theBottle;
+    string theStack;
+    //private string theLine;
     public int candiesToCollect = 20;
     private double candiesAtDeath;
     public GameObject bottlePrefab;
@@ -53,14 +50,18 @@ public class PlayerMove_2P : MonoBehaviour
         if (isP1) {
             theHorizontal = "p1_Horiz";
             theVertical = "p1_Vert";
-            theDash = "Fire2";
-            theLine = "Fire3";
+            theDash = "p1_Dash";
+            theBottle = "p1_Bottle";
+            theStack = "p1_Stack";
+            //theLine = "Fire3";
         } else
         {
             theHorizontal = "p2_Horiz";
             theVertical = "p2_Vert";
-            theDash = "Fire1";
-            theLine = "Fire3";
+            theDash = "p2_Dash";
+            theBottle = "p2_Bottle";
+            theStack = "p2_Stack";
+            //theLine = "Fire3";
         }
 
         s = GetComponentInChildren<SpriteRenderer>();
@@ -82,7 +83,7 @@ public class PlayerMove_2P : MonoBehaviour
         }
         
         if(!isAlive){
-            anims[8].enabled;
+            anims[8].enabled = true;
             return;
         }
 
@@ -124,11 +125,7 @@ public class PlayerMove_2P : MonoBehaviour
             line.SetPosition(1, new Vector3(0,0,1));
         }*/
 
-        if(Input.GetKeyDown(".") && isP1){
-                Bottle();
-            } else if (Input.GetKeyDown("e") && !isP1){
-                Bottle();
-            }
+        if(Input.GetButtonDown(theBottle) && cont.Bottle()){Bottle();}
 
 
 
@@ -177,11 +174,7 @@ public class PlayerMove_2P : MonoBehaviour
             }
             
             if(otherP.holding != gameObject){
-                if(Input.GetKeyDown("/") && isP1){
-                    Hold();
-                } else if (Input.GetKeyDown("q") && !isP1){
-                    Hold();
-                }
+                if(Input.GetButtonDown(theStack)){Hold();}
                 gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, new Vector2(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky)), accTime);
             }
         }
@@ -228,6 +221,14 @@ public class PlayerMove_2P : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.CompareTag("Zombie"))
+        {
+            Die();
+        }
+    }
+
     public void Die() {
         // ZombieJumpScare ZJumpScare = GetComponent<ZombieJumpScare>();
 
@@ -235,14 +236,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         cont.ZombieScare();
 
-        gameObject.transform.SetParent(otherP.transform);
-        gameObject.transform.position = otherP.transform.position;
         isAlive = false;
-        speed = 0;
-        dashDuration = 0;
-        s.color = new Color(0f,0f,0f,0f);
-        s.enabled = false;
-        gameObject.GetComponent<Collider2D>().enabled = false;
 
         candiesAtDeath = GameController.control.candyCount;
 
@@ -276,8 +270,9 @@ public class PlayerMove_2P : MonoBehaviour
 
     public void Bottle(){
         GameObject b = Instantiate(bottlePrefab);
-        b.transform.position = new Vector2(gameObject.transform.position.x + 2f * (BooltoInt(isFacingRight) - 0.5f), gameObject.transform.position.y + 2f * (BooltoInt(!isFacingDown) - 0.5f));
-        b.GetComponent<Bottle>().direction = new Vector2(Input.GetAxis(theHorizontal) + (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) + (BooltoInt(!isFacingDown) - 0.5f));
+        b.GetComponent<Bottle>().direction = new Vector2(Input.GetAxis(theHorizontal) * 100 + (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 100 + (BooltoInt(!isFacingDown) - 0.5f));
+        b.GetComponent<Bottle>().direction.Normalize();
+        b.transform.position = (Vector2)gameObject.transform.position + b.GetComponent<Bottle>().direction * 2;
     }
     
     public void Hold()
@@ -307,7 +302,7 @@ public class PlayerMove_2P : MonoBehaviour
             holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
         } else {
             holding.transform.localPosition = new Vector2(0f,0f);
-            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 100f + 10f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 100f + 10f * (BooltoInt(!isFacingDown) - 0.5f));
+            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 200f + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 200f + 30f * (BooltoInt(!isFacingDown) - 0.5f));
             holding.transform.parent = null;
             holding = null;
         }

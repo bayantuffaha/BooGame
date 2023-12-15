@@ -489,26 +489,6 @@ MonoBehaviour:
   isFacingRight: 1
   isFacingDown: 1
   isDash: 0
-  frontIdle:
-  - {fileID: -942121789, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: 2093915270, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: -1281923457, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: -1037597374, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  backIdle:
-  - {fileID: -639889871, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: 353357781, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: -1565178110, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: -949646038, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  frontRun:
-  - {fileID: -136469414, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: 1750311981, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: 2107667928, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  - {fileID: -627770913, guid: 49331e2f8bb4c456fb45fc5ed2de3678, type: 3}
-  backRun:
-  - {fileID: 83601272, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: 1653886498, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: 526134646, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
-  - {fileID: -1009997010, guid: 7892681ca1016436ca1ec345117c1750, type: 3}
   anims:
   - {fileID: 8958356160811413683}
   - {fileID: 4746054466928279693}
@@ -518,7 +498,6 @@ MonoBehaviour:
   - {fileID: 6830855061436551093}
   - {fileID: 6243815216464575043}
   - {fileID: 5408530384681146012}
-  uPF: 10
   speed: 5
   accTime: 0.1
   dashDuration: 0

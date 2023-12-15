@@ -9,16 +9,19 @@ public class GameController : MonoBehaviour
 
     public static GameController control;
 
-    public double candyCount;
+    public int candyCount;
 
     public float timeSinceDash;
     public float timeSinceLine;
+    public float timeSinceBottle;
 
     public float dashCooldown;
     public float lineCooldown;
+    public float bottleCooldown;
 
     public int lineCost;
     public int dashCost;
+    public int bottleCost;
     // public GameObject player1;
     // public GameObject player2;
 
@@ -43,8 +46,9 @@ public class GameController : MonoBehaviour
     }
 
     void Update() {
-        timeSinceDash = timeSinceDash + Time.deltaTime;
-        timeSinceLine = timeSinceLine + Time.deltaTime;
+        timeSinceDash+=Time.deltaTime;
+        timeSinceLine+=Time.deltaTime;
+        timeSinceBottle+=Time.deltaTime;
     }
 
     void Start()
@@ -88,6 +92,15 @@ public class GameController : MonoBehaviour
         if (candyCount >= dashCost && timeSinceDash > dashCooldown) {
             timeSinceDash = 0;
             candyCount-=dashCost;
+            return true;
+        }
+        return false;
+    }
+
+    public bool Bottle(){
+        if (candyCount >= bottleCost && timeSinceBottle > bottleCooldown) {
+            timeSinceBottle = 0;
+            candyCount-=bottleCost;
             return true;
         }
         return false;
