@@ -4,8 +4,9 @@ public class EnemyMove : MonoBehaviour
 {
     public float speed = 3f;
     public float detectionRange = 10f;
-    public Transform player;
-    private bool isChasing = false;
+    public Transform player1;
+    public Transform player2;
+    private Transform isChasing;
     public LayerMask obstacleLayerMask;
     float sticky = 0;
 
@@ -33,29 +34,28 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if (player != null)
+        if (player1 != null && player2 != null)
         {
             //increase speed
             speed += .02f * Time.deltaTime;
             speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
 
-            if (CanSeePlayer())
+            isChasing = CanSeePlayer();
+            if (isChasing!=null)
             {
-                isChasing = true;
                 ChasePlayer();
             }
             else
             {
-                isChasing = false;
                 Patrolling();
             }
 
-            Vector3 direction = player.position - transform.position;
+            /*Vector3 direction = player.position - transform.position;
 
             if (Physics2D.Raycast(transform.position, direction, detectionRange, obstacleLayerMask))
             {
                 //Debug.Log("Obstacle detected!");
-            }
+            }*/
 
             DrawLineOfSight();
         }
@@ -63,11 +63,11 @@ public class EnemyMove : MonoBehaviour
 
     void ChasePlayer()
     {
-        if (isChasing)
+        if (isChasing!=null)
         {
             //Debug.Log("Chasing player");
             // Move towards the player
-            transform.position = Vector2.MoveTowards(transform.position, player.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, isChasing.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
         }
     }
 
@@ -99,42 +99,44 @@ void Patrolling()
 
 
 
-    bool CanSeePlayer()
+    Transform CanSeePlayer()
     {
-        if (player == null)
+        if (player1 == null || player2 == null)
         {
             Debug.LogWarning("Player not assigned!");
-            return false;
+            return null;
         }
 
-        Vector3 direction = player.position - transform.position;
+        Vector3 direction1 = player1.position - transform.position;
+        Vector3 direction2 = player2.position - transform.position;
 
         // Check if the player is within detection range
-        if (direction.magnitude > detectionRange)
+        if (direction1.magnitude > detectionRange && direction2.magnitude > detectionRange)
         {
             //Debug.LogWarning("Player out of detection range!");
-            return false;
+            return null;
         }
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionRange, obstacleLayerMask);
+        RaycastHit2D hit1 = Physics2D.Raycast(transform.position + 2*direction1.normalized, direction1, detectionRange/*, obstacleLayerMask*/);
+        RaycastHit2D hit2 = Physics2D.Raycast(transform.position + 2*direction2.normalized, direction2, detectionRange/*, obstacleLayerMask*/);
 
-        if (hit.collider != null)
-        {
-            // Check if the hit object is the player
-            if (hit.collider.CompareTag("Player"))
-            {
-                return true; // Player is visible, so the enemy can chase
+        Debug.LogWarning(hit1.collider.gameObject.name);
+        Debug.LogWarning(hit2.collider.gameObject.name);
+        if (hit1.collider != null && hit2.collider != null && hit1.collider.CompareTag("Player") && hit2.collider.CompareTag("Player")) {
+            if (direction1.magnitude < direction2.magnitude && direction2.magnitude <= detectionRange && player1.gameObject.GetComponent<PlayerMove_2P>().isAlive) {
+                return player1;
+            } else if (direction1.magnitude > direction2.magnitude && direction1.magnitude <= detectionRange && player2.gameObject.GetComponent<PlayerMove_2P>().isAlive) {
+                return player2;
+            } else {
+                return null;
             }
-            else
-            {
-                Debug.LogWarning("Obstacle detected between enemy and player!");
-                return false; // Obstacle is in the way, so the enemy won't chase
-            }
-        }
-        else
-        {
-            // No obstacles, and the player is within detection range
-            return true;
+        } else if (hit1.collider != null && (hit2.collider == null || hit1.collider.CompareTag("Player") && !hit2.collider.CompareTag("Player") && direction1.magnitude <= detectionRange) && player1.gameObject.GetComponent<PlayerMove_2P>().isAlive) {
+            return player1;
+        } else if (hit2.collider != null && (hit1.collider == null || !hit1.collider.CompareTag("Player") && hit2.collider.CompareTag("Player") && direction2.magnitude <= detectionRange) && player2.gameObject.GetComponent<PlayerMove_2P>().isAlive) {
+            return player2;
+        } else {
+            // Colliders are messed up
+            return null;
         }
     }
 
@@ -175,7 +177,7 @@ void Patrolling()
         if (lineOfSight != null)
         {
             lineOfSight.SetPosition(0, transform.position);
-            lineOfSight.SetPosition(1, isChasing ? player.position : transform.position);
+            lineOfSight.SetPosition(1, (isChasing!=null) ? isChasing.position : transform.position);
         }
     }
 }

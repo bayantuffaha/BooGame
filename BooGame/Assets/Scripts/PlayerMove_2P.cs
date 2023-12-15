@@ -234,7 +234,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         // ZJumpScare.ShowJumpScare();
 
-        cont.ZombieScare();
+        //cont.ZombieScare();                    Remmber to turn me on when you fix the gamecontroller
 
         isAlive = false;
 
@@ -302,7 +302,7 @@ public class PlayerMove_2P : MonoBehaviour
             holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
         } else {
             holding.transform.localPosition = new Vector2(0f,0f);
-            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 200f + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 200f + 30f * (BooltoInt(!isFacingDown) - 0.5f));
+            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 100f + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 100f + 30f * (BooltoInt(!isFacingDown) - 0.5f));
             holding.transform.parent = null;
             holding = null;
         }
