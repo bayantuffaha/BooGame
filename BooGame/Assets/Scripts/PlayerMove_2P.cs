@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SceneManagement = UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMove_2P : MonoBehaviour
 {
@@ -40,8 +41,11 @@ public class PlayerMove_2P : MonoBehaviour
     string theStack;
     //private string theLine;
     public int candiesToCollect = 20;
-    private double candiesAtDeath;
+    // private double candiesAtDeath;
     public GameObject bottlePrefab;
+
+    public UnityEngine.UI.Button reviveButton;
+    public Transform revivalStation;
     
 
     // Start is called before the first frame update
@@ -65,6 +69,8 @@ public class PlayerMove_2P : MonoBehaviour
         }
 
         s = GetComponentInChildren<SpriteRenderer>();
+
+        reviveButton.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -179,30 +185,85 @@ public class PlayerMove_2P : MonoBehaviour
             }
         }
 
+        // if(IsAtRevivalStation()) {
+        //     Debug.Log("at revival station"); 
+        // } else {
+        //     Debug.Log("NOT at revival station");
+        // }
+
+        // if (!isAlive && !otherP.isAlive) {
+        //     playersAlive = 0;
+        // } else if ((!isAlive && otherP.isAlive) || (isAlive && !otherP.isAlive)) {
+        //     playersAlive = 1;
+        // } else if (isAlive && otherP.isAlive) {
+        //     playersAlive = 2;
+        // }
+
     }
 
     void CheckRevivalCondition()
     {
-        if (playersAlive == 1)
+        // if (playersAlive == 1)
+        // {
+        //     if (GameController.control.candyCount - candiesAtDeath >= candiesToCollect)
+        //     {
+        //         reviveButton.gameObject.SetActive(true);
+        //         RevivePlayer();
+        //     }
+        // }
+
+        bool canRevive = (GameController.control.candyCount >= candiesToCollect && IsAtRevivalStation() && otherP.IsAtRevivalStation());
+        // Debug.Log(otherP.isAlive);
+        // reviveButton.gameObject.SetActive(canRevive);
+
+        if (playersAlive == 1 && canRevive) {
+        //     // RevivePlayer();
+            // Debug.Log("time to turn on button");
+            reviveButton.gameObject.SetActive(canRevive);
+        } else {
+            // Debug.Log("not button time");
+        }
+    }
+
+    bool IsAtRevivalStation()
+    {
+        if (revivalStation == null) {
+            Debug.LogWarning("Revival station not assigned!");
+            return false;
+        }
+
+        float distanceToStation = Vector3.Distance(transform.position, revivalStation.position);
+        // Debug.Log(distanceToStation);
+        return distanceToStation < 5f;
+    }
+
+    public void RevivePlayerOnClick()
+    {
+        if (GameController.control.candyCount >= candiesToCollect)
         {
-            if (GameController.control.candyCount - candiesAtDeath >= candiesToCollect)
-            {
-                RevivePlayer();
-            }
+            GameController.control.candyCount -= candiesToCollect;
+
+            // Update UI or game elements for the deducted candies
+
+            RevivePlayer();
+
+            reviveButton.gameObject.SetActive(false);
         }
     }
 
     void RevivePlayer()
     {
-        isAlive = true;
-        speed = 5;
-        dashDuration = 0.1f;
-        s.color = new Color(1f, 1f, 1f, 1f);
-        s.enabled = true;
-        gameObject.GetComponent<Collider2D>().enabled = true;
+        otherP.isAlive = true;
+        // speed = 5;
+        // dashDuration = 0.1f;
+        // s.color = new Color(1f, 1f, 1f, 1f);
+        // s.enabled = true;
+        // gameObject.GetComponent<Collider2D>().enabled = true;
 
-        playersAlive++;
-        gameObject.transform.SetParent(null);
+        playersAlive = 2;
+        otherP.playersAlive = 2;
+        // gameObject.transform.SetParent(null);
+        // Debug.Log("REVIVED HOMIE");
     }
 
     public void OnCollisionExit2D(Collision2D collision)
@@ -237,11 +298,18 @@ public class PlayerMove_2P : MonoBehaviour
         //cont.ZombieScare();                    Remmber to turn me on when you fix the gamecontroller
 
         isAlive = false;
-
-        candiesAtDeath = GameController.control.candyCount;
+        // candiesAtDeath = GameController.control.candyCount;
 
         // Decrement the playersAlive variable by one
-        playersAlive--;
+        if (otherP.isAlive) {
+            playersAlive = 1;
+            otherP.playersAlive = 1;
+        } else {
+            playersAlive = 0;
+            otherP.playersAlive = 0;
+        }
+
+
         // If no players are alive, switch to the loss scene
         /*if (playersAlive <= 0 && GameController.control.candyCount >= 25)
         {
