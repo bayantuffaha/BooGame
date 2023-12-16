@@ -44,8 +44,8 @@ public class PlayerMove_2P : MonoBehaviour
     // private double candiesAtDeath;
     public GameObject bottlePrefab;
 
-    public UnityEngine.UI.Button reviveButton;
-    public Transform revivalStation;
+    /*public UnityEngine.UI.Button reviveButton;
+    public Transform revivalStation;*/
     
 
     // Start is called before the first frame update
@@ -70,7 +70,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         s = GetComponentInChildren<SpriteRenderer>();
 
-        reviveButton.gameObject.SetActive(false);
+        /*reviveButton.gameObject.SetActive(false);*/
     }
 
     // Update is called once per frame
@@ -81,7 +81,7 @@ public class PlayerMove_2P : MonoBehaviour
             holding.transform.parent = gameObject.transform;
         }
 
-        CheckRevivalCondition();
+        //CheckRevivalCondition();
 
         foreach(SpriteRenderer i in anims){
             i.enabled = false;
@@ -201,7 +201,7 @@ public class PlayerMove_2P : MonoBehaviour
 
     }
 
-    void CheckRevivalCondition()
+    /*void CheckRevivalCondition()
     {
         // if (playersAlive == 1)
         // {
@@ -225,18 +225,6 @@ public class PlayerMove_2P : MonoBehaviour
         }
     }
 
-    bool IsAtRevivalStation()
-    {
-        if (revivalStation == null) {
-            Debug.LogWarning("Revival station not assigned!");
-            return false;
-        }
-
-        float distanceToStation = Vector3.Distance(transform.position, revivalStation.position);
-        // Debug.Log(distanceToStation);
-        return distanceToStation < 5f;
-    }
-
     public void RevivePlayerOnClick()
     {
         if (GameController.control.candyCount >= candiesToCollect)
@@ -249,11 +237,11 @@ public class PlayerMove_2P : MonoBehaviour
 
             reviveButton.gameObject.SetActive(false);
         }
-    }
+    }*/
 
     void RevivePlayer()
     {
-        otherP.isAlive = true;
+        isAlive = true;
         // speed = 5;
         // dashDuration = 0.1f;
         // s.color = new Color(1f, 1f, 1f, 1f);
@@ -284,9 +272,13 @@ public class PlayerMove_2P : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Zombie"))
+        if(col.gameObject.CompareTag("Zombie") && isAlive)
         {
             Die();
+        }
+        if(col.gameObject.CompareTag("Revive") && !isAlive && cont.Revive())
+        {
+            RevivePlayer();
         }
     }
 

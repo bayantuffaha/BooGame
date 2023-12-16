@@ -9,6 +9,8 @@ TagManager:
   - GameHandler
   - PauseMenuSlider
   - Ooze
+  - CollectText
+  - Revive
   layers:
   - Default
   - TransparentFX
