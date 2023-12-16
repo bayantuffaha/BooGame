@@ -15,16 +15,19 @@ public class GameController : MonoBehaviour
     public float timeSinceLine;
     public float timeSinceBottle;
     public float timeSinceRevive;
+    public float timeSinceBomb;
 
     public float dashCooldown;
     public float lineCooldown;
     public float bottleCooldown;
     public float reviveCooldown;
+    public float bombCooldown;
 
     public int lineCost;
     public int dashCost;
     public int bottleCost;
     public int reviveCost;
+    public int bombCost;
     // public GameObject player1;
     // public GameObject player2;
 
@@ -53,6 +56,7 @@ public class GameController : MonoBehaviour
         timeSinceLine+=Time.deltaTime;
         timeSinceBottle+=Time.deltaTime;
         timeSinceRevive+=Time.deltaTime;
+        timeSinceBomb+=Time.deltaTime;
     }
 
     void Start()
@@ -105,6 +109,15 @@ public class GameController : MonoBehaviour
         if (candyCount >= bottleCost && timeSinceBottle > bottleCooldown) {
             timeSinceBottle = 0;
             candyCount-=bottleCost;
+            return true;
+        }
+        return false;
+    }
+
+    public bool Bomb(){
+        if (candyCount >= bombCost && timeSinceBomb > bombCooldown) {
+            timeSinceBomb = 0;
+            candyCount-=bombCost;
             return true;
         }
         return false;

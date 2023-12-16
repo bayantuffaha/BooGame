@@ -38,12 +38,14 @@ public class PlayerMove_2P : MonoBehaviour
     string theVertical;
     string theDash;
     string theBottle;
+    string theBomb;
     string theStack;
     //private string theLine;
     public int candiesToCollect = 20;
     // private double candiesAtDeath;
     public GameObject bottlePrefab;
-
+    public GameObject bombPrefab;
+    public float throwForce;
     /*public UnityEngine.UI.Button reviveButton;
     public Transform revivalStation;*/
     
@@ -56,6 +58,7 @@ public class PlayerMove_2P : MonoBehaviour
             theVertical = "p1_Vert";
             theDash = "p1_Dash";
             theBottle = "p1_Bottle";
+            theBomb = "p1_Bomb";
             theStack = "p1_Stack";
             //theLine = "Fire3";
         } else
@@ -64,6 +67,7 @@ public class PlayerMove_2P : MonoBehaviour
             theVertical = "p2_Vert";
             theDash = "p2_Dash";
             theBottle = "p2_Bottle";
+            theBomb = "p2_Bomb";
             theStack = "p2_Stack";
             //theLine = "Fire3";
         }
@@ -132,6 +136,7 @@ public class PlayerMove_2P : MonoBehaviour
         }*/
 
         if(Input.GetButtonDown(theBottle) && cont.Bottle()){Bottle();}
+        if(Input.GetButtonDown(theBomb) && cont.Bomb()){Bomb();}
 
 
 
@@ -334,6 +339,12 @@ public class PlayerMove_2P : MonoBehaviour
         b.GetComponent<Bottle>().direction.Normalize();
         b.transform.position = (Vector2)gameObject.transform.position + b.GetComponent<Bottle>().direction * 2;
     }
+
+    public void Bomb(){
+        GameObject b = Instantiate(bombPrefab);
+        b.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * throwForce + (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * throwForce + (BooltoInt(!isFacingDown) - 0.5f));
+        b.transform.position = (Vector2)gameObject.transform.position;
+    }
     
     public void Hold()
     {
@@ -362,7 +373,7 @@ public class PlayerMove_2P : MonoBehaviour
             holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
         } else {
             holding.transform.localPosition = new Vector2(0f,0f);
-            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * 100f + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * 100f + 30f * (BooltoInt(!isFacingDown) - 0.5f));
+            holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * throwForce + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * throwForce + 30f * (BooltoInt(!isFacingDown) - 0.5f));
             holding.transform.parent = null;
             holding = null;
         }
