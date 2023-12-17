@@ -1,14 +1,16 @@
 using UnityEngine;
 
-public class EnemyMove : MonoBehaviour
+public class WerewolfMove : MonoBehaviour
 {
-    public float speed = 3f;
+    float speed = 0f;
     public float detectionRange = 10f;
     public Transform player1;
     public Transform player2;
     private Transform isChasing;
-    public LayerMask obstacleLayerMask;
+    //LayerMask obstacleLayerMask;
     float sticky = 0;
+    public SpriteRenderer walk;
+    public SpriteRenderer run;
 
     public LineRenderer lineOfSight;
     public bool isAttacking = false;
@@ -19,8 +21,14 @@ public class EnemyMove : MonoBehaviour
     private bool isPatrollingRight = true;
 
     //Variables to speed up the movement over time
-    private float minimumSpeed = 3f;
-    private float maximumSpeed = 6f;
+    public float minimumSpeed = 3f;
+    public float maximumSpeed = 6f;
+
+    public float dashDuration;
+    public float dashSpeedInc;
+    public AnimationCurve dashCurve;
+    Vector2 dashDirection;
+    float timeSinceDash;
 
 
     void Start()
@@ -34,7 +42,15 @@ public class EnemyMove : MonoBehaviour
 
     void Update()
     {
-        if (player1 != null && player2 != null)
+        timeSinceDash+=Time.deltaTime;
+        if(isChasing!=null || timeSinceDash<=dashDuration){
+            run.enabled = true;
+            walk.enabled = false;
+        } else {
+            walk.enabled = true;
+            run.enabled = false;
+        }
+        if (player1 != null && player2 != null && timeSinceDash>dashDuration)
         {
             //increase speed
             speed += .02f * Time.deltaTime;
@@ -43,7 +59,9 @@ public class EnemyMove : MonoBehaviour
             isChasing = CanSeePlayer();
             if (isChasing!=null)
             {
-                ChasePlayer();
+                timeSinceDash = 0;
+                dashDirection = 100*(isChasing.position-transform.position)+transform.position;
+                //dashDirection.Normalize();
             }
             else
             {
@@ -58,6 +76,8 @@ public class EnemyMove : MonoBehaviour
             }*/
 
             DrawLineOfSight();
+        } else {
+            ChasePlayer();
         }
     }
 
@@ -65,9 +85,8 @@ public class EnemyMove : MonoBehaviour
     {
         if (isChasing!=null)
         {
-            //Debug.Log("Chasing player");
-            // Move towards the player
-            transform.position = Vector2.MoveTowards(transform.position, isChasing.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
+            run.flipX = dashDirection.x-transform.position.x<0;
+            transform.position = Vector2.MoveTowards(transform.position, dashDirection, (speed*dashCurve.Evaluate(timeSinceDash/dashDuration)*dashSpeedInc/(1 - sticky)) * Time.deltaTime);
         }
     }
 
@@ -91,6 +110,7 @@ void Patrolling()
 
     // Use Perlin noise to create smooth, random movement
     float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
+    walk.flipX = xNoise<0;
     float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
     Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed
 
