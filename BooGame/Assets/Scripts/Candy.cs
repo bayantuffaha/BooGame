@@ -16,11 +16,12 @@ public class Candy : MonoBehaviour
     }
 
     // This function is called when another collider enters this collider
-    void OnTriggerEnter2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
         // Check if the other collider is tagged as "Player"
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("can");
             // Check if the candy is not collected yet
             if (!isCollected)
             {
