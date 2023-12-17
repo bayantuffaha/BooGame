@@ -2685,6 +2685,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Split Screen Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 6471786642941563330, guid: 5a2fd26dcb6f9264f90a7117a1aa47a5, type: 3}
+      propertyPath: orthographic size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6471786642941563333, guid: 5a2fd26dcb6f9264f90a7117a1aa47a5, type: 3}
       propertyPath: m_RootOrder
       value: 14
