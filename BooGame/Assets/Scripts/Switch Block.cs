@@ -8,6 +8,7 @@ public class SwitchBlock : MonoBehaviour
     bool current = false;
     bool last = false;
     bool state = false;
+    public SpriteRenderer cone;
     
     // Start is called before the first frame update
     void Start()
@@ -23,8 +24,7 @@ public class SwitchBlock : MonoBehaviour
         if (last && !current) {
             state = !state;
         }
-        GetComponentInChildren<SpriteRenderer>().flipX = state;
-        GetComponentInChildren<SpriteRenderer>().flipY = state;
+        cone.enabled = !state;
         GetComponent<BoxCollider2D>().enabled = !state;
     }
 }

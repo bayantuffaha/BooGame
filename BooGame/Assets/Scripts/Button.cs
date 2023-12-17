@@ -5,6 +5,8 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public bool on;
+    public GameObject up;
+    public GameObject down;
     
     // Start is called before the first frame update
     void Start()
@@ -15,15 +17,14 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponentInChildren<SpriteRenderer>().flipX = on;
-        GetComponentInChildren<SpriteRenderer>().flipY = on;
+        up.SetActive(!on);
+        down.SetActive(on);
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if (col.gameObject.tag == "Player"){
+        if (col.CompareTag("Player")){
             on = true;
         }
-        on = true;
     }
 
     void OnTriggerExit2D(Collider2D col){
