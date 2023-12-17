@@ -86,7 +86,7 @@ public class WerewolfMove : MonoBehaviour
         if (isChasing!=null)
         {
             run.flipX = dashDirection.x-transform.position.x<0;
-            transform.position = Vector2.MoveTowards(transform.position, dashDirection, (speed*dashCurve.Evaluate(timeSinceDash/dashDuration)*dashSpeedInc/(1 - sticky)) * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, dashDirection, (speed*dashCurve.Evaluate(timeSinceDash/dashDuration)*dashSpeedInc*(1 - sticky)) * Time.deltaTime);
         }
     }
 
