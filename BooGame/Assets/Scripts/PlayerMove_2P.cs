@@ -94,6 +94,7 @@ public class PlayerMove_2P : MonoBehaviour
         
         if(!isAlive){
             anims[8].enabled = true;
+            gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, Vector2.zero, accTime);
             return;
         }
 
@@ -297,7 +298,7 @@ public class PlayerMove_2P : MonoBehaviour
         // ZJumpScare.ShowJumpScare();
 
         //cont.ZombieScare();                    Remmber to turn me on when you fix the gamecontroller
-
+        if(isDash){return;}
         isAlive = false;
         if(holding!=null){Hold();}
         // candiesAtDeath = GameController.control.candyCount;
