@@ -299,6 +299,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         //cont.ZombieScare();                    Remmber to turn me on when you fix the gamecontroller
         if(isDash){return;}
+        cont.ZombieScare();
         isAlive = false;
         if(holding!=null){Hold();}
         // candiesAtDeath = GameController.control.candyCount;

@@ -45,13 +45,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601765d6b3f29804c842863a6939262f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyCount: 0
-  timeSinceDash: 0
+  candyCount: 20
+  timeSinceDash: 10
   timeSinceLine: 0
-  dashCooldown: 0
+  timeSinceBottle: 10
+  timeSinceRevive: 0
+  timeSinceBomb: 10
+  dashCooldown: 0.75
   lineCooldown: 0
+  bottleCooldown: 3
+  reviveCooldown: 0
+  bombCooldown: 3
   lineCost: 0
-  dashCost: 0
+  dashCost: 5
+  bottleCost: 7
+  reviveCost: 20
+  bombCost: 10
   ZombieImage: {fileID: 0}
   ZombieSound: {fileID: 0}
 --- !u!114 &-2500035497269322775

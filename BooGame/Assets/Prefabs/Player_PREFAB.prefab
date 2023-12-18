@@ -505,8 +505,8 @@ MonoBehaviour:
   - {fileID: 882042912984650393}
   speed: 15
   accTime: 0.1
-  dashDuration: 1
-  dashSpeed: 30
+  dashDuration: 0.5
+  dashSpeed: 80
   dashCurve:
     serializedVersion: 2
     m_Curve:
