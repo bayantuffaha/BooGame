@@ -3039,11 +3039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7997400954793301890, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: -31.1
       objectReference: {fileID: 0}
     - target: {fileID: 7997400954793301890, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -179.7
       objectReference: {fileID: 0}
     - target: {fileID: 7997400954793301890, guid: 074d57c887797ff4fb71338f454e73c9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -43027,6 +43027,10 @@ PrefabInstance:
     - target: {fileID: 4547647740863515712, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_Name
       value: Enemy (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9017221851897172395, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

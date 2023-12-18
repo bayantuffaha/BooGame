@@ -66,6 +66,7 @@ public class EnemyMove : MonoBehaviour
         if (isChasing!=null)
         {
             //Debug.Log("Chasing player");
+            gameObject.GetComponentInChildren<SpriteRenderer>().flipX = isChasing.position.x-transform.position.x<0;
             // Move towards the player
             transform.position = Vector2.MoveTowards(transform.position, isChasing.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
         }
@@ -93,7 +94,7 @@ void Patrolling()
     float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
     float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
     Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed
-
+    gameObject.GetComponentInChildren<SpriteRenderer>().flipX = movement.x<0;
     transform.Translate(movement * speed * Time.deltaTime);
 }
 
