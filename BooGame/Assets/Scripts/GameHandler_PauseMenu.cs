@@ -25,6 +25,11 @@ public class GameHandler_PauseMenu : MonoBehaviour {
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
+        
+        void OnLevelWasLoaded (){
+                pauseMenuUI.SetActive(false);
+                GameisPaused = false;
+        }
 
         void Update (){
                 if (Input.GetKeyDown(KeyCode.Escape)){
