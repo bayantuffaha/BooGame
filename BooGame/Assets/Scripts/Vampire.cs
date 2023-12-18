@@ -38,7 +38,7 @@ public class Vampire : MonoBehaviour
         gameObject.SetActive(false);
         Invoke("Appear", timeToAppear);
         
-        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = true;
     }
 
     void Update()
@@ -55,13 +55,14 @@ public class Vampire : MonoBehaviour
                 if (isChasing!=null)
                 {
                     Debug.Log("VAMPIRE CHASING");
+                    gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x-transform.position.x<0);
                     ChasePlayer();
-                    if ((Vector2.Distance(transform.position, player1.position) <= 1.0f) || (Vector2.Distance(transform.position, player2.position) <= 1.0f)) {
+                    /*if ((Vector2.Distance(transform.position, player1.position) <= 1.0f) || (Vector2.Distance(transform.position, player2.position) <= 1.0f)) {
                         GetComponent<Collider2D>().enabled = true;
                         Debug.Log("ATTACK TIME");
                     } else {
                         GetComponent<Collider2D>().enabled = false;
-                    }
+                    }*/
                 }
                 else
                 {
@@ -93,7 +94,7 @@ public class Vampire : MonoBehaviour
         if (isChasing!=null)
         {
             //Debug.Log("Chasing player");
-            gameObject.GetComponentInChildren<SpriteRenderer>().flipX = isChasing.position.x-transform.position.x<0;
+            gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x-transform.position.x<0);
             // Move towards the player
             transform.position = Vector2.MoveTowards(transform.position, isChasing.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
         }
@@ -121,7 +122,7 @@ public class Vampire : MonoBehaviour
         float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
         float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
         Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed
-        gameObject.GetComponentInChildren<SpriteRenderer>().flipX = movement.x<0;
+        gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(movement.x<0);
         transform.Translate(movement * speed * Time.deltaTime);
     }
 
@@ -172,7 +173,7 @@ public class Vampire : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collision.gameObject.GetComponent<PlayerMove_2P>().isAlive && !collision.gameObject.GetComponent<PlayerMove_2P>().isDash)
         {
             isAttacking = true;
             Debug.Log("Attacking!");
