@@ -25,6 +25,7 @@ public class EnemyMove : MonoBehaviour
 
     void Start()
     {
+        minimumSpeed = speed;
         Debug.Log("Enemy initialized.");
         if (lineOfSight != null)
         {

@@ -43859,6 +43859,14 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashSpeedInc
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44345,6 +44353,14 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashDuration
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashSpeedInc
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
       propertyPath: m_RootOrder
       value: -1

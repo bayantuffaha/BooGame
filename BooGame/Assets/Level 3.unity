@@ -459,6 +459,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -466,6 +470,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -1196,9 +1204,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1546177013}
     - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 162687997370547443, guid: 139489cc534009344953d410ee561ea5, type: 3}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (3)
@@ -1420,9 +1436,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1546177013}
     - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 162687997370547443, guid: 139489cc534009344953d410ee561ea5, type: 3}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy
@@ -1952,6 +1976,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -1959,6 +1987,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2168,9 +2200,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1546177013}
     - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 162687997370547443, guid: 139489cc534009344953d410ee561ea5, type: 3}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (1)
@@ -2238,6 +2278,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -2245,6 +2289,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -2641,6 +2689,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -2648,6 +2700,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3158,6 +3214,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -3165,6 +3225,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3248,6 +3312,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -3255,6 +3323,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -3880,6 +3952,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -3887,6 +3963,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -42435,6 +42515,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -42442,6 +42526,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -42744,9 +42832,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1546177013}
     - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: projectile
       value: 
       objectReference: {fileID: 162687997370547443, guid: 139489cc534009344953d410ee561ea5, type: 3}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (2)
@@ -42870,6 +42966,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -42877,6 +42977,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -43295,6 +43399,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -43302,6 +43410,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -43437,6 +43549,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -43444,6 +43560,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -43742,6 +43862,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -43749,6 +43873,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44019,6 +44147,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -44026,6 +44158,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44315,6 +44451,18 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashSpeedInc
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44387,6 +44535,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -44394,6 +44546,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44734,6 +44890,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -44741,6 +44901,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44810,6 +44974,18 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashDuration
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashSpeedInc
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -45181,6 +45357,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -45188,6 +45368,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -45250,6 +45434,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1928581889}
     m_Modifications:
     - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: player1
       value: 
       objectReference: {fileID: 1438299279}
@@ -45257,6 +45445,10 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1546177013}
+    - target: {fileID: 579979061369534208, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: detectionRange
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
       value: -1
