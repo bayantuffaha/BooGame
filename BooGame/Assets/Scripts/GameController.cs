@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
         timeSinceBomb+=Time.deltaTime;
     }
 
-    void Start()
+    void OnLevelWasLoaded()
     {
         ZombieImage.gameObject.SetActive(false);
     }
