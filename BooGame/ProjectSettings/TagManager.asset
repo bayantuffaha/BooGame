@@ -11,6 +11,8 @@ TagManager:
   - Ooze
   - CollectText
   - Revive
+  - Vampire
+  - Garlic
   layers:
   - Default
   - TransparentFX

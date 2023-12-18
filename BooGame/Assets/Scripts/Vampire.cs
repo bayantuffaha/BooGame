@@ -37,7 +37,7 @@ public class Vampire : MonoBehaviour
 
         gameObject.SetActive(false);
         Invoke("Appear", timeToAppear);
-
+        
         gameObject.GetComponent<Collider2D>().enabled = false;
     }
 
@@ -46,6 +46,7 @@ public class Vampire : MonoBehaviour
         if (hasAppeared) {
             if (player1 != null && player2 != null)
             {
+                // Debug.Log("VAMPIRE APPEARED");
                 //increase speed
                 speed += .02f * Time.deltaTime;
                 speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
@@ -53,9 +54,11 @@ public class Vampire : MonoBehaviour
                 isChasing = CanSeePlayer();
                 if (isChasing!=null)
                 {
+                    Debug.Log("VAMPIRE CHASING");
                     ChasePlayer();
                     if ((Vector2.Distance(transform.position, player1.position) <= 1.0f) || (Vector2.Distance(transform.position, player2.position) <= 1.0f)) {
                         GetComponent<Collider2D>().enabled = true;
+                        Debug.Log("ATTACK TIME");
                     } else {
                         GetComponent<Collider2D>().enabled = false;
                     }
@@ -71,7 +74,6 @@ public class Vampire : MonoBehaviour
                 {
                     //Debug.Log("Obstacle detected!");
                 }*/
-
                 DrawLineOfSight();
             }
         }
@@ -136,15 +138,34 @@ public class Vampire : MonoBehaviour
         Vector3 direction1 = player1.position - transform.position;
         Vector3 direction2 = player2.position - transform.position;
 
-        // Check if the player is within detection range
-        if (direction1.magnitude > detectionRange && direction2.magnitude > detectionRange)
+        // Check if both players are alive
+        bool player1Alive = player1.gameObject.GetComponent<PlayerMove_2P>().isAlive;
+        bool player2Alive = player2.gameObject.GetComponent<PlayerMove_2P>().isAlive;
+
+        // Check if both players are within detection range
+        bool player1InRange = direction1.magnitude <= detectionRange;
+        bool player2InRange = direction2.magnitude <= detectionRange;
+
+        // Check if both players are within detection range and alive
+        if (player1InRange && player2InRange && player1Alive && player2Alive)
         {
-            //Debug.LogWarning("Player out of detection range!");
-            return null;
+            // Return the closest player
+            return (direction1.magnitude < direction2.magnitude) ? player1 : player2;
         }
 
-        // Remove obstacle checking here and directly return the player's position
-        return (player1.gameObject.GetComponent<PlayerMove_2P>().isAlive) ? player1 : player2;
+        // Check if only one player is within detection range and alive
+        if (player1InRange && player1Alive)
+        {
+            return player1;
+        }
+
+        if (player2InRange && player2Alive)
+        {
+            return player2;
+        }
+
+        // Return null if no player is within range or alive
+        return null;
     }
 
 
@@ -190,4 +211,5 @@ public class Vampire : MonoBehaviour
             lineOfSight.SetPosition(1, (isChasing!=null) ? isChasing.position : transform.position);
         }
     }
+
 }
