@@ -211,7 +211,7 @@ MonoBehaviour:
   isAttacking: 0
   patrolMinX: 0
   patrolMaxX: 10
-  projectile: {fileID: 0}
+  projectile: {fileID: 162687997370547443, guid: 139489cc534009344953d410ee561ea5, type: 3}
   cooldown: 2
 --- !u!4 &6371248478691699408 stripped
 Transform:

@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 676307797271595986, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_ForceReceiveLayers.m_Bits
-      value: 0
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1625491214566120129, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_audioClip
@@ -156,7 +156,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_LocalPosition.x
