@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &3973894455024932903
 BoxCollider2D:
@@ -182,7 +182,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e6cb941e88f71a94db13ae7c33a0403d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 436dc6d2ed41f0f40aba8778989dad27, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
