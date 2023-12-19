@@ -49,7 +49,6 @@ public class ShopMenu : MonoBehaviour
     //Button Functions:
     public void Button_OpenShop()
     {
-        Debug.Log("Hello");
         shopMenuUI.SetActive(true);
         buttonOpenShop.SetActive(false);
         ShopisOpen = true;
