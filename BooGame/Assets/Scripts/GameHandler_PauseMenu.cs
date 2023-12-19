@@ -28,6 +28,7 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         }
         
         void OnLevelWasLoaded (){
+                pauseMenuUI = GameObject.FindWithTag("PauseMenuUI");
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
