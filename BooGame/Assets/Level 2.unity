@@ -4237,6 +4237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause_Canvas_NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 4108392343437634528, guid: 1baafe5b314944c46b1cc809433eec7b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5416388356618877753, guid: 1baafe5b314944c46b1cc809433eec7b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
