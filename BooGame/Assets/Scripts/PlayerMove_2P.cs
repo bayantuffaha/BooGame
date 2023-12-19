@@ -48,6 +48,7 @@ public class PlayerMove_2P : MonoBehaviour
     public float throwForce;
     /*public UnityEngine.UI.Button reviveButton;
     public Transform revivalStation;*/
+    public int level;
     
 
     // Start is called before the first frame update
@@ -74,7 +75,7 @@ public class PlayerMove_2P : MonoBehaviour
         }
 
         s = GetComponentInChildren<SpriteRenderer>();
-
+        cont.Preserve(level);
         /*reviveButton.gameObject.SetActive(false);*/
     }
 
