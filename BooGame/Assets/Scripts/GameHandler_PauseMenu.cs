@@ -22,8 +22,8 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         }
 
         void Start (){
-                pauseMenuUI = GameObject.FindWithTag("PauseMenuUI");
-                pauseMenuUI.SetActive(false);
+                //pauseMenuUI = GameObject.FindWithTag("PauseMenuUI");
+                //pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
         
