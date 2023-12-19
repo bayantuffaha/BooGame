@@ -23,12 +23,12 @@ public class GameHandler_PauseMenu : MonoBehaviour {
 
         void Start (){
                 //pauseMenuUI = GameObject.FindWithTag("PauseMenuUI");
-                //pauseMenuUI.SetActive(false);
+                pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
         
         void OnLevelWasLoaded (){
-                pauseMenuUI = GameObject.FindWithTag("PauseMenuUI");
+                //pauseMenuUI = GameObject.FindWithTag("PauseMenuUI") != null ? GameObject.FindWithTag("PauseMenuUI") : pauseMenuUI;
                 pauseMenuUI.SetActive(false);
                 GameisPaused = false;
         }
@@ -42,6 +42,10 @@ public class GameHandler_PauseMenu : MonoBehaviour {
                                 Pause();
                         }
                 }
+                /*if(!GameisPaused){
+                        pauseMenuUI = GameObject.FindWithTag("PauseMenuUI") != null ? GameObject.FindWithTag("PauseMenuUI") : pauseMenuUI;
+                        pauseMenuUI.SetActive(false);
+                }*/
         }
 
         void Pause(){
