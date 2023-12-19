@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using SceneManagement = UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -108,7 +108,7 @@ public class PlayerMove_2P : MonoBehaviour
         }
             
         if (isDash) {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(dashSpeed*dashDirection.x*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*dashDirection.y*dashCurve.Evaluate(cont.timeSinceDash/dashDuration));
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector3(dashSpeed*(float)Math.Pow(1.03f,cont.speedCount)*dashDirection.x*dashCurve.Evaluate(cont.timeSinceDash/dashDuration), dashSpeed*(float)Math.Pow(1.03f,1f*cont.speedCount)*dashDirection.y*dashCurve.Evaluate(cont.timeSinceDash/dashDuration));
             if (cont.timeSinceDash >= dashDuration) {
                 isDash = false;
             }
@@ -192,7 +192,7 @@ public class PlayerMove_2P : MonoBehaviour
             
             if(otherP.holding != gameObject){
                 if(Input.GetButtonDown(theStack)){Hold();}
-                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, new Vector2(Input.GetAxis(theHorizontal)*speed*(1-sticky), Input.GetAxis(theVertical)*speed*(1-sticky)), accTime);
+                gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.Lerp(gameObject.GetComponent<Rigidbody2D>().velocity, new Vector2(Input.GetAxis(theHorizontal)*speed*(float)Math.Pow(1.03f,1f*cont.speedCount)*(1-sticky), Input.GetAxis(theVertical)*speed*(float)Math.Pow(1.03f,1f*cont.speedCount)*(1-sticky)), accTime);
             }
         }
 

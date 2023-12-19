@@ -109,18 +109,18 @@ public class GameController : MonoBehaviour
     }
 
     public bool Bottle(){
-        if (candyCount >= bottleCost && timeSinceBottle > bottleCooldown) {
+        if (bottleCount >= 1 && timeSinceBottle > bottleCooldown) {
             timeSinceBottle = 0;
-            candyCount-=bottleCost;
+            bottleCount-=1;
             return true;
         }
         return false;
     }
 
     public bool Bomb(){
-        if (candyCount >= bombCost && timeSinceBomb > bombCooldown) {
+        if (bombCount >= 1 && timeSinceBomb > bombCooldown) {
             timeSinceBomb = 0;
-            candyCount-=bombCost;
+            bombCount-=1;
             return true;
         }
         return false;
