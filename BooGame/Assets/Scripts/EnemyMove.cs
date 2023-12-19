@@ -66,7 +66,7 @@ public class EnemyMove : MonoBehaviour
     {
         if (isChasing!=null)
         {
-            //MusicManager.instance.StartChaseMusic();
+            MusicManager.instance.StartChaseMusic();
             //Debug.Log("Chasing player");
             gameObject.GetComponentInChildren<SpriteRenderer>().flipX = isChasing.position.x-transform.position.x<0;
             // Move towards the player
