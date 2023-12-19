@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pause_Canvas_NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 2510931807361360469, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2548633513426535229, guid: 808329b2625d5f842b59eb25f226146f, type: 3}
       propertyPath: m_Color.b
       value: 0.50377357
