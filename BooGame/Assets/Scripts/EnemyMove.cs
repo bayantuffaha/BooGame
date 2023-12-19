@@ -93,7 +93,7 @@ void Patrolling()
     // }
 
     // Use Perlin noise to create smooth, random movement
-    MusicManager.instance.StopChaseMusic();
+    //MusicManager.instance.StopChaseMusic();
     float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
     float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
     Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed

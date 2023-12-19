@@ -27,6 +27,14 @@ public class ShopMenu : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown("space")){
+            if(ShopisOpen){
+                Button_CloseShop();
+            } else {
+                Button_OpenShop();
+            }
+        }
+        
         if (GameController.control.candyCount >= item1Cost)
         {
             item1BuyButton.SetActive(true);
