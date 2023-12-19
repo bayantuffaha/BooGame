@@ -19,6 +19,7 @@ public class SwitchBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(butt==null){return;}
         last = current;
         current = butt.on;
         if (last && !current) {
