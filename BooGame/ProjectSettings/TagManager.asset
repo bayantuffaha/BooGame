@@ -13,6 +13,7 @@ TagManager:
   - Revive
   - Vampire
   - Garlic
+  - PauseMenuUI
   layers:
   - Default
   - TransparentFX
