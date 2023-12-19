@@ -10,6 +10,9 @@ public class GameController : MonoBehaviour
     public static GameController control;
 
     public int candyCount;
+    public int bottleCount;
+    public int bombCount;
+    public int speedCount;
 
     public float timeSinceDash;
     public float timeSinceLine;
@@ -61,7 +64,7 @@ public class GameController : MonoBehaviour
 
     void OnLevelWasLoaded()
     {
-        ZombieImage.gameObject.SetActive(false);
+        //ZombieImage.gameObject.SetActive(false);
     }
 
     public void StartGame() {
