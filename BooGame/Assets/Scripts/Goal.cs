@@ -11,6 +11,7 @@ public class Goal : MonoBehaviour
     public GameObject unlocked;
     public GameObject leftlocked;
     public GameObject rightlocked;
+    public GameController cont;
     bool open;
     public int dex;
     
@@ -46,6 +47,7 @@ public class Goal : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col){
         if(open){
+            if(dex==1){cont.candyCount = 0;}
             SceneManager.LoadScene(dex);
         }
     }
