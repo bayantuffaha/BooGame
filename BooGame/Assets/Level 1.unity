@@ -41899,6 +41899,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1425555747229401859, guid: 2ed7a979837be0c4ba655e2ad3bbfce5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1468409091275845800, guid: 2ed7a979837be0c4ba655e2ad3bbfce5, type: 3}
       propertyPath: m_Name
       value: ZombieAudio
