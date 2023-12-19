@@ -93380,7 +93380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: reviveCost
-      value: 0
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: ZombieImage
@@ -93396,27 +93396,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: dashCooldown
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: lineCooldown
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: timeSinceBomb
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: timeSinceDash
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: bottleCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
+      propertyPath: reviveCooldown
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: timeSinceBottle
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
