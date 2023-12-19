@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3395393233027773419}
   - component: {fileID: 121297019664712112}
+  - component: {fileID: 7895279616658756677}
   m_Layer: 0
   m_Name: Music
   m_TagString: Untagged
@@ -39,7 +40,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1646075543042004077}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 32fe526448d871c49bf3fc1162087e95, type: 3}
@@ -128,3 +129,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7895279616658756677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646075543042004077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7814871a8835df4793694263786f6fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseLayerClip: {fileID: 8300000, guid: 32fe526448d871c49bf3fc1162087e95, type: 3}
+  drumLayerClip: {fileID: 8300000, guid: 68af7530fb608fb48ba4f23ff4bc99a2, type: 3}
