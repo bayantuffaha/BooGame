@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6026178302668465163}
   - component: {fileID: 8341399710996201072}
   - component: {fileID: -2500035497269322775}
-  - component: {fileID: 8357689130556499225}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -81,23 +80,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1780579446806449331, guid: 08c35d5cc91bb6e48b3a08cc4fb673bb, type: 3}
   mixer: {fileID: 24100000, guid: bcb501d3519df344aab37b14c33293fd, type: 2}
---- !u!114 &8357689130556499225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5766120371773393555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e2943330285c0e446aae8fbe99f75961, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shopMenuUI: {fileID: 0}
-  buttonOpenShop: {fileID: 0}
-  item1BuyButton: {fileID: 0}
-  item2BuyButton: {fileID: 0}
-  item3BuyButton: {fileID: 0}
-  item1Cost: 10
-  item2Cost: 15
-  item3Cost: 20
