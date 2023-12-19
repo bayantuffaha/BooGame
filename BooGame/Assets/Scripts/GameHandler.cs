@@ -8,6 +8,7 @@ public class GameHandler : MonoBehaviour
     // public GameObject pointsText;
     // private int pointsNum = 0;
     private GameObject player;
+    public GameController cont;
 
     // public bool isDefending = false;
 
@@ -28,7 +29,7 @@ public class GameHandler : MonoBehaviour
 
     public void StartGame() {
         Debug.Log("starting the game!");
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene(0);
     }    
 
     public void QuitGame() {
@@ -46,11 +47,21 @@ public class GameHandler : MonoBehaviour
 
     public void RestartGame() {
         Time.timeScale = 1f;
+        cont.candyCount = 0;
         // GameHandler_Pausemenu.GameisPaused = false;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(1);
             // Please also reset all static variables here, for new games!
         // playerHealth = StartPlayerHealth;
-  }
+    }
+
+    public void RestartGameWin() {
+        Time.timeScale = 1f;
+        cont.candyCount = 0;
+        // GameHandler_Pausemenu.GameisPaused = false;
+            SceneManager.LoadScene(7);
+            // Please also reset all static variables here, for new games!
+        // playerHealth = StartPlayerHealth;
+    }
 
 //   // Replay the Level where you died
 //     public void ReplayLastLevel() {
