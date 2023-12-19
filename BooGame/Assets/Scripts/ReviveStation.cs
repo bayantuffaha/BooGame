@@ -18,5 +18,9 @@ public class ReviveStation : MonoBehaviour
     {
         if(cont.candyCount >= cont.reviveCost){
         gameObject.GetComponent<Rigidbody2D>().angularVelocity = spin;}
+        if (cont.candyCount < cont.reviveCost)
+        {
+            gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
+        }
     }
 }
