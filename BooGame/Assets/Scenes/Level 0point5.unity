@@ -38939,11 +38939,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2023186799534626055, guid: 899a76aea07dd4445be7e0ace60b9dff, type: 3}
   m_PrefabInstance: {fileID: 640708926}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &346321945 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1425555747229401859, guid: 2ed7a979837be0c4ba655e2ad3bbfce5, type: 3}
-  m_PrefabInstance: {fileID: 382424287}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &361909911
 GameObject:
   m_ObjectHideFlags: 0
@@ -39462,17 +39457,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 899a76aea07dd4445be7e0ace60b9dff, type: 3}
---- !u!114 &532856339 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6972506240073794246, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
-  m_PrefabInstance: {fileID: 344613059}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &534459277 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2023186799534626055, guid: 899a76aea07dd4445be7e0ace60b9dff, type: 3}
@@ -45033,14 +45017,6 @@ PrefabInstance:
       propertyPath: reviveCost
       value: 20
       objectReference: {fileID: 0}
-    - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
-      propertyPath: ZombieImage
-      value: 
-      objectReference: {fileID: 532856339}
-    - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
-      propertyPath: ZombieSound
-      value: 
-      objectReference: {fileID: 346321945}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: dashCooldown
       value: 3
