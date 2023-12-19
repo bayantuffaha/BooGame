@@ -18,6 +18,7 @@ public class GameHandler : MonoBehaviour
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         // sceneName = SceneManager.GetActiveScene().name;        
     }
 

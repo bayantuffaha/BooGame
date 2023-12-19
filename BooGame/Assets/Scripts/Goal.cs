@@ -19,6 +19,7 @@ public class Goal : MonoBehaviour
     void Start()
     {
         open = false;
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame

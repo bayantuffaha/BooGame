@@ -53,6 +53,7 @@ public class PlayerMove_2P : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         if (isP1) {
             theHorizontal = "p1_Horiz";
             theVertical = "p1_Vert";

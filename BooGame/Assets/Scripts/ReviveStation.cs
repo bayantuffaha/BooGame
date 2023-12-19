@@ -10,7 +10,7 @@ public class ReviveStation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
