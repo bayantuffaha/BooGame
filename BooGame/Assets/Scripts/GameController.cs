@@ -14,6 +14,11 @@ public class GameController : MonoBehaviour
     public int bombCount;
     public int speedCount;
 
+    public int candyCountAtStart;
+    public int bottleCountAtStart;
+    public int bombCountAtStart;
+    public int speedCountAtStart;
+
     public float timeSinceDash;
     public float timeSinceLine;
     public float timeSinceBottle;
@@ -31,6 +36,8 @@ public class GameController : MonoBehaviour
     public int bottleCost;
     public int reviveCost;
     public int bombCost;
+
+    public int level;
     // public GameObject player1;
     // public GameObject player2;
 
@@ -51,7 +58,6 @@ public class GameController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     void Update() {
@@ -65,6 +71,14 @@ public class GameController : MonoBehaviour
     void OnLevelWasLoaded()
     {
         //ZombieImage.gameObject.SetActive(false);
+    }
+
+    public void Preserve(int lvl) {
+        candyCountAtStart = candyCount;
+        bombCountAtStart = bombCount;
+        speedCountAtStart = speedCount;
+        bottleCountAtStart = bottleCount;
+        level = lvl;
     }
 
     public void StartGame() {

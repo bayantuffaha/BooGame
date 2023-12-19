@@ -49,18 +49,24 @@ public class GameHandler : MonoBehaviour
 
     public void RestartGame() {
         Time.timeScale = 1f;
-        cont.candyCount = 0;
+        cont.candyCount = cont.candyCountAtStart;
+        cont.bombCount = cont.bombCountAtStart;
+        cont.speedCount = cont.speedCountAtStart;
+        cont.bottleCount = cont.bottleCountAtStart;
         // GameHandler_Pausemenu.GameisPaused = false;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(cont.level);
             // Please also reset all static variables here, for new games!
         // playerHealth = StartPlayerHealth;
     }
 
     public void RestartGameWin() {
         Time.timeScale = 1f;
-        cont.candyCount = 0;
         // GameHandler_Pausemenu.GameisPaused = false;
-            SceneManager.LoadScene(7);
+        cont.candyCount = 0;
+        cont.bombCount = 0;
+        cont.speedCount = 0;
+        cont.bottleCount = 0;
+        SceneManager.LoadScene("7");
             // Please also reset all static variables here, for new games!
         // playerHealth = StartPlayerHealth;
     }
