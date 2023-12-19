@@ -1212,7 +1212,8 @@ PrefabInstance:
       propertyPath: lineCooldown
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8357689130556499225, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

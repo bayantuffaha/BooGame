@@ -15,9 +15,11 @@ public class ScoreManager : MonoBehaviour
     string bombScore = "0";
     string bottleScore = "0";
 
+    GameController cont;
+
     private void Awake()
     {
-        instance = this;
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     }
 
     // Start is called before the first frame update
@@ -32,9 +34,9 @@ public class ScoreManager : MonoBehaviour
     void Update()
     {
         // Assign the score to the global count as a string
-        score = (GameController.control.candyCount).ToString();
-        bombScore = (GameController.control.bombCount).ToString();
-        bottleScore = (GameController.control.bottleCount).ToString();
+        score = (cont.candyCount).ToString();
+        bombScore = (cont.bombCount).ToString();
+        bottleScore = (cont.bottleCount).ToString();
         scoreText.text = score; // Update the text
         bomb.text = bombScore;
         bottle.text = bottleScore;
