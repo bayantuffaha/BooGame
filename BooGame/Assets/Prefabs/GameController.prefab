@@ -243,9 +243,9 @@ MonoBehaviour:
   bombCooldown: 3
   lineCost: 0
   dashCost: 5
-  bottleCost: 7
+  bottleCost: 0
   reviveCost: 20
-  bombCost: 10
+  bombCost: 0
   ZombieImage: {fileID: 6604369861396503580}
   ZombieSound: {fileID: 5529877421811222950}
 --- !u!114 &-2500035497269322775

@@ -102,7 +102,7 @@ public class GameController : MonoBehaviour
     public bool Dash(){
         if (candyCount >= dashCost && timeSinceDash > dashCooldown) {
             timeSinceDash = 0;
-            candyCount-=dashCost;
+            candyCount -= dashCost;
             return true;
         }
         return false;
