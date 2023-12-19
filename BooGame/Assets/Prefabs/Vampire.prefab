@@ -203,6 +203,10 @@ PrefabInstance:
       value: Vampire
       objectReference: {fileID: 0}
     - target: {fileID: 4547647740863515712, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547647740863515712, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
