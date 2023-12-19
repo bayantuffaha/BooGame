@@ -2264,6 +2264,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+--- !u!1001 &582908599
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.464457
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 408.80252
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.0406013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4832398433298312835, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
+      propertyPath: m_Name
+      value: EquipmentManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
 --- !u!4 &583349036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3232591371734778043, guid: 4b294121f9ca2fb41b86dbdd517a0cf8, type: 3}
@@ -4405,7 +4466,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1022219836217078390, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 6650643500836925379, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 3836038536970239988, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 2310084281127395463, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 9082945541021704648, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 1816028128428976528, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 1499328430039102752, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 3411973413923583172, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
+    - {fileID: 3773630253175115468, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1944729611512539090, guid: 94e4c08ab482bdc408fd4b092bf0fb2f, type: 3}
       insertIndex: -1
