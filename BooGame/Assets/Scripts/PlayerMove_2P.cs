@@ -322,7 +322,7 @@ public class PlayerMove_2P : MonoBehaviour
             // Start a coroutine to load the EndWin scene after some seconds
             StartCoroutine(LoadSceneWithDelay("EndWin", 3f));
         }
-        else */if (playersAlive <= 0 && GameController.control.candyCount <= 25)
+        else */if (playersAlive <= 0)
         {
             // Start a coroutine to load the EndLose scene after some seconds
             StartCoroutine(LoadSceneWithDelay("EndLose", 3f));
