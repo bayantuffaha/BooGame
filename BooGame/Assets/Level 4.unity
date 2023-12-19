@@ -1429,10 +1429,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
-      propertyPath: dashCost
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: lineCost
       value: 5
       objectReference: {fileID: 0}
