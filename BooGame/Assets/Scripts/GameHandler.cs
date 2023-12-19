@@ -30,7 +30,7 @@ public class GameHandler : MonoBehaviour
 
     public void StartGame() {
         Debug.Log("starting the game!");
-        cont.candyCount = 0;
+        cont.candyCount = 2000;
         SceneManager.LoadScene("Level 0");
     }    
 
