@@ -29,7 +29,7 @@ public class BombRollout : MonoBehaviour
     {
         if (Input.GetButtonDown(BombButton))
         {
-            Debug.Log("button pressed");
+            Debug.Log("button ressed");
             Instantiate(Garlic, Thrower);
         }
         if(Input.GetButtonDown("m"))
