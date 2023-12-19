@@ -1492,6 +1492,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
+      propertyPath: bottleCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8341399710996201072, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: candyCount
       value: 0
       objectReference: {fileID: 0}
@@ -3209,20 +3213,24 @@ PrefabInstance:
       value: CandySpawner
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
+      propertyPath: count
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: max.x
-      value: 50
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: max.y
-      value: 70
+      value: -120
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: min.x
-      value: -50
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: min.y
-      value: -70
+      value: -200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
