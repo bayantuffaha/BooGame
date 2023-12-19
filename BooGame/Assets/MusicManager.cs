@@ -8,6 +8,7 @@ public class MusicManager : MonoBehaviour
 
     public AudioClip baseLayerClip;
     public AudioClip drumLayerClip;
+    public GameHandler_PauseMenu cont;
 
     private AudioSource baseLayerAudioSource;
     private AudioSource drumLayerAudioSource;
@@ -38,6 +39,11 @@ public class MusicManager : MonoBehaviour
         drumLayerAudioSource.loop = true;
         drumLayerAudioSource.volume = 0f; // Start with drum layer muted
         drumLayerAudioSource.Play();
+        cont = GameObject.FindWithTag("GameController").GetComponent<GameHandler_PauseMenu>();
+    }
+
+    void Update(){
+        baseLayerAudioSource.volume=cont.volumeLevel;
     }
 
     // Call this method when a chase is happening
@@ -59,9 +65,9 @@ public class MusicManager : MonoBehaviour
         float targetVolume = 2.0f;
         float fadeDuration = 2.0f; // Adjust as needed
 
-        while (drumLayerAudioSource.volume < targetVolume)
+        while (drumLayerAudioSource.volume < targetVolume*cont.volumeLevel)
         {
-            drumLayerAudioSource.volume += Time.deltaTime / fadeDuration;
+            drumLayerAudioSource.volume += Time.deltaTime * cont.volumeLevel / fadeDuration;
             yield return null;
         }
     }
@@ -71,9 +77,9 @@ public class MusicManager : MonoBehaviour
         float targetVolume = 0.0f;
         float fadeDuration = 2.0f; // Adjust as needed
 
-        while (drumLayerAudioSource.volume > targetVolume)
+        while (drumLayerAudioSource.volume > 0)
         {
-            drumLayerAudioSource.volume -= Time.deltaTime / fadeDuration;
+            drumLayerAudioSource.volume -= Time.deltaTime * cont.volumeLevel/ fadeDuration;
             yield return null;
         }
     }

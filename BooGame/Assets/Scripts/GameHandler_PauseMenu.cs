@@ -9,7 +9,7 @@ public class GameHandler_PauseMenu : MonoBehaviour {
         public static bool GameisPaused = false;
         public GameObject pauseMenuUI;
         public AudioMixer mixer;
-        public static float volumeLevel = 1.0f;
+        public float volumeLevel = 1.0f;
         public Slider sliderVolumeCtrl;
 
         void Awake (){
