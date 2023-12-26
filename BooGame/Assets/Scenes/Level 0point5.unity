@@ -38482,10 +38482,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277160783}
-  m_Text: 'CARRY
-
-
-    (''q'' or ''<'')'
+  m_Text: "Remember:\nRevives Cost 20\xA2\n\nCARRY\n\n('q' or '<')"
   m_OffsetZ: 0
   m_CharacterSize: 0.025
   m_LineSpacing: 1
@@ -38549,7 +38546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 277160783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 48.03, y: -128.09, z: -9}
+  m_LocalPosition: {x: 45.27, y: -126.04, z: -9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45624,7 +45621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: count
-      value: 300
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7388221700377640384, guid: f403ac1e7da507848b462912c0312147, type: 3}
       propertyPath: max.x

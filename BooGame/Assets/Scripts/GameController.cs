@@ -25,11 +25,11 @@ public class GameController : MonoBehaviour
     public float timeSinceRevive;
     public float timeSinceBomb;
 
-    public float dashCooldown;
+    /*public float dashCooldown;
     public float lineCooldown;
     public float bottleCooldown;
     public float reviveCooldown;
-    public float bombCooldown;
+    public float bombCooldown;*/
 
     public int lineCost;
     public int dashCost;
@@ -105,7 +105,7 @@ public class GameController : MonoBehaviour
 
 
     public bool Line(){
-        if (candyCount >= lineCost && (timeSinceLine > lineCooldown || timeSinceLine < 0)) {
+        if (candyCount >= lineCost /*&& (timeSinceLine > lineCooldown || timeSinceLine < 0)*/) {
             timeSinceLine = -0.04f;
             candyCount-=lineCost;
             return true;
@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour
     }
 
     public bool Dash(){
-        if (candyCount >= dashCost && timeSinceDash > dashCooldown) {
+        if (candyCount >= dashCost /*&& timeSinceDash > dashCooldown*/) {
             timeSinceDash = 0;
             candyCount -= dashCost;
             return true;
@@ -123,7 +123,7 @@ public class GameController : MonoBehaviour
     }
 
     public bool Bottle(){
-        if (bottleCount >= 1 && timeSinceBottle > bottleCooldown) {
+        if (bottleCount >= 1 /*&& timeSinceBottle > bottleCooldown*/) {
             timeSinceBottle = 0;
             bottleCount-=1;
             return true;
@@ -132,7 +132,7 @@ public class GameController : MonoBehaviour
     }
 
     public bool Bomb(){
-        if (bombCount >= 1 && timeSinceBomb > bombCooldown) {
+        if (bombCount >= 1 /*&& timeSinceBomb > bombCooldown*/) {
             timeSinceBomb = 0;
             bombCount-=1;
             return true;
@@ -141,7 +141,7 @@ public class GameController : MonoBehaviour
     }
 
     public bool Revive(){
-        if (candyCount >= reviveCost && timeSinceRevive > reviveCooldown) {
+        if (candyCount >= reviveCost /*&& timeSinceRevive > reviveCooldown*/) {
             timeSinceRevive = 0;
             candyCount-=reviveCost;
             return true;

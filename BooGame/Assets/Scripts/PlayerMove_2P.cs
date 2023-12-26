@@ -102,7 +102,7 @@ public class PlayerMove_2P : MonoBehaviour
 
         //Debug.Log("num alive: " + playersAlive);
         //dash
-        if (Input.GetButtonDown(theDash) && !(otherP.holding == gameObject) && (Input.GetAxis(theVertical)!=0 || Input.GetAxis(theHorizontal)!=0) && cont.Dash()) {
+        if (Input.GetButtonDown(theDash) && !(otherP.holding == gameObject) && (Input.GetAxis(theVertical)!=0 || Input.GetAxis(theHorizontal)!=0) && !isDash && cont.Dash()) {
             isDash = true;
             dashDirection = new Vector2(Input.GetAxis(theHorizontal), Input.GetAxis(theVertical));
             gameObject.GetComponent<AudioSource>().Play();
