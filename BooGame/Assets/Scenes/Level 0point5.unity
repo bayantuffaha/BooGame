@@ -38217,7 +38217,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 3272371051796504033, guid: abb9f1aeee540654a88d166bc98c7db3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -38385,7 +38385,7 @@ Transform:
   - {fileID: 300924441}
   - {fileID: 1099130297}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &249960783
 PrefabInstance:
@@ -38487,12 +38487,12 @@ TextMesh:
 
     (''q'' or ''<'')'
   m_OffsetZ: 0
-  m_CharacterSize: 0.8
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -38554,7 +38554,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &293019704 stripped
 Transform:
@@ -40571,7 +40571,7 @@ Transform:
   - {fileID: 309646083}
   - {fileID: 1863422626}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &697830780 stripped
 Transform:
@@ -41486,12 +41486,12 @@ TextMesh:
 
     sparingly'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -42919,7 +42919,7 @@ Transform:
   - {fileID: 1878099235}
   - {fileID: 1074708979}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1140853867
 PrefabInstance:
@@ -43787,6 +43787,110 @@ PrefabInstance:
       propertyPath: player2
       value: 
       objectReference: {fileID: 1926724192}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashSpeedInc
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: maximumSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: minimumSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].time
+      value: 0.26921523
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].time
+      value: 0.38683844
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].time
+      value: 0.7210571
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].value
+      value: 0.005418271
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].value
+      value: 0.90900797
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].value
+      value: 0.84986496
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].inSlope
+      value: 3.932471
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].inSlope
+      value: 1.4866847
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].inSlope
+      value: -1.1431868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[4].inSlope
+      value: 0.025749192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].inWeight
+      value: 0.33333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].outSlope
+      value: 3.932471
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].inWeight
+      value: 0.04385968
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].outSlope
+      value: 1.4866847
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].inWeight
+      value: 0.23664711
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].outSlope
+      value: -1.1431868
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[4].inWeight
+      value: 0.41228074
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[4].outSlope
+      value: 0.025749192
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[1].outWeight
+      value: 0.26172373
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[2].outWeight
+      value: 0.1908511
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605599488982473245, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
+      propertyPath: dashCurve.m_Curve.Array.data[3].outWeight
+      value: 0.21696858
+      objectReference: {fileID: 0}
     - target: {fileID: 3232591371734778043, guid: 1ccbd1e360d3b604f8c156aa531f024b, type: 3}
       propertyPath: m_RootOrder
       value: -1
@@ -44568,24 +44672,25 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464805953}
-  m_Text: '<----- Werewolf
-
+  m_Text: '<----- Werewolf that way
 
     He''s fast!
 
     Launch some
 
-    syrup (''e'' or
-    ''>'')
+    syrup
+    (''e'' or ''>'')
 
-    to slow him down'
+    to slow him down
+
+    V Freedom that way V'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -44647,7 +44752,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1476258789 stripped
 Transform:
@@ -46018,12 +46123,12 @@ TextMesh:
   m_GameObject: {fileID: 1733311692}
   m_Text: "Buy some syrup \nbottles (space)"
   m_OffsetZ: 0
-  m_CharacterSize: 0.8
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -46085,7 +46190,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1737784377 stripped
 Transform:
@@ -46439,7 +46544,7 @@ Transform:
   - {fileID: 1030867462}
   - {fileID: 1476258789}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1846367634
 PrefabInstance:

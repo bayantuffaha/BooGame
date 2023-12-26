@@ -660,6 +660,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (3)
@@ -1665,7 +1689,7 @@ Transform:
   - {fileID: 272192284}
   - {fileID: 98294859}
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &272192283
 PrefabInstance:
@@ -2760,7 +2784,7 @@ Transform:
   - {fileID: 1702948301}
   - {fileID: 1071586220}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &556723101
 PrefabInstance:
@@ -3312,6 +3336,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (1)
@@ -88320,12 +88368,12 @@ TextMesh:
 
     sparingly'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -89535,6 +89583,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (2)
@@ -90064,7 +90136,7 @@ Transform:
   - {fileID: 1191288564}
   - {fileID: 62248810}
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1302785100
 PrefabInstance:
@@ -90686,6 +90758,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (5)
@@ -91169,7 +91265,7 @@ Transform:
   - {fileID: 750968978}
   - {fileID: 1407924689}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1612487886
 PrefabInstance:
@@ -92495,12 +92591,12 @@ TextMesh:
 
     Try dashing through the mummies'
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -92562,7 +92658,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1840477728
 PrefabInstance:
@@ -93235,6 +93331,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy (4)
@@ -93526,6 +93646,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 735773435}
     m_Modifications:
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 246870027}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 434317595}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: cooldown
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 302780116631116299, guid: 31f80da314c2753499f252f0706a9976, type: 3}
+      propertyPath: detectionRange
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 5452519408621790763, guid: 31f80da314c2753499f252f0706a9976, type: 3}
       propertyPath: m_Name
       value: Mummy
@@ -93612,12 +93756,12 @@ TextMesh:
   m_GameObject: {fileID: 2141824730}
   m_Text: "Dashing will cost \nyou 5 candies"
   m_OffsetZ: 0
-  m_CharacterSize: 1
+  m_CharacterSize: 0.025
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
   m_TabSize: 4
-  m_FontSize: 0
+  m_FontSize: 500
   m_FontStyle: 0
   m_RichText: 1
   m_Font: {fileID: 0}
@@ -93679,5 +93823,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
