@@ -66,7 +66,7 @@ public class GameHandler : MonoBehaviour
         cont.bombCount = 0;
         cont.speedCount = 0;
         cont.bottleCount = 0;
-        SceneManager.LoadScene(7);
+        SceneManager.LoadScene(0);
             // Please also reset all static variables here, for new games!
         // playerHealth = StartPlayerHealth;
     }
