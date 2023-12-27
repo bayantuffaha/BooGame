@@ -93333,6 +93333,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5027032667965082186, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5766120371773393555, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
       propertyPath: m_Name
       value: GameController (1)
