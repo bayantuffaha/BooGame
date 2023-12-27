@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5709837759602870259}
   - component: {fileID: 1625491214566120129}
   - component: {fileID: 2605599488982473245}
-  - component: {fileID: 6666879747159597463}
+  - component: {fileID: 2917989147843217076}
   m_Layer: 0
   m_Name: Werewolf
   m_TagString: Zombie
@@ -228,8 +228,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!60 &6666879747159597463
-PolygonCollider2D:
+--- !u!70 &2917989147843217076
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -260,24 +260,9 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.28570378, y: 1.5872803}
-      - {x: -2.633535, y: -0.16715503}
-      - {x: -2.0163045, y: -2.0629392}
-      - {x: -0.078856885, y: -1.7137458}
-      - {x: 2.363703, y: 0.78519005}
-  m_UseDelaunayMesh: 0
+  m_Offset: {x: 0, y: -0.25}
+  m_Size: {x: 2, y: 4}
+  m_Direction: 0
 --- !u!1 &6566134057500393615
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +545,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8057372995337219806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
