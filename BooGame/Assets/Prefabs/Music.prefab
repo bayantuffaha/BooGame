@@ -143,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseLayerClip: {fileID: 8300000, guid: 32fe526448d871c49bf3fc1162087e95, type: 3}
   drumLayerClip: {fileID: 8300000, guid: 68af7530fb608fb48ba4f23ff4bc99a2, type: 3}
+  cont: {fileID: -2500035497269322775, guid: 10d297a1c17ebe24d8df646b8f7c01ac, type: 3}
