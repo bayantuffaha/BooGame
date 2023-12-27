@@ -37,25 +37,26 @@ public class Vampire : MonoBehaviour
 
         gameObject.SetActive(false);
         Invoke("Appear", timeToAppear);
-        
+
         gameObject.GetComponent<Collider2D>().enabled = true;
     }
 
     void Update()
     {
-        if (hasAppeared) {
+        if (hasAppeared)
+        {
             if (player1 != null && player2 != null)
             {
                 // Debug.Log("VAMPIRE APPEARED");
                 //increase speed
-                speed += .02f * Time.deltaTime;
-                speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
+                // speed += .02f * Time.deltaTime;
+                // speed = Mathf.Clamp(speed, minimumSpeed, maximumSpeed);
 
                 isChasing = CanSeePlayer();
-                if (isChasing!=null)
+                if (isChasing != null)
                 {
                     Debug.Log("VAMPIRE CHASING");
-                    gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x-transform.position.x<0);
+                    gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x - transform.position.x < 0);
                     ChasePlayer();
                     /*if ((Vector2.Distance(transform.position, player1.position) <= 1.0f) || (Vector2.Distance(transform.position, player2.position) <= 1.0f)) {
                         GetComponent<Collider2D>().enabled = true;
@@ -82,19 +83,19 @@ public class Vampire : MonoBehaviour
 
     void Appear()
     {
-    // This function is called after the specified time, making the enemy appear
-    hasAppeared = true;
+        // This function is called after the specified time, making the enemy appear
+        hasAppeared = true;
 
-    // Activate the GameObject to make it visible and active
-    gameObject.SetActive(true);
+        // Activate the GameObject to make it visible and active
+        gameObject.SetActive(true);
     }
 
     void ChasePlayer()
     {
-        if (isChasing!=null)
+        if (isChasing != null)
         {
             //Debug.Log("Chasing player");
-            gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x-transform.position.x<0);
+            gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(isChasing.position.x - transform.position.x < 0);
             // Move towards the player
             transform.position = Vector2.MoveTowards(transform.position, isChasing.position, (speed - (minimumSpeed * sticky)) * Time.deltaTime);
         }
@@ -122,7 +123,7 @@ public class Vampire : MonoBehaviour
         float xNoise = Mathf.PerlinNoise(Time.time * 0.5f, 0) * 2f - 1f; // Generate random value in x direction
         float yNoise = Mathf.PerlinNoise(0, Time.time * 0.5f) * 2f - 1f; // Generate random value in y direction
         Vector3 movement = new Vector3(xNoise, yNoise, 0f).normalized; // Normalize for consistent speed
-        gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(movement.x<0);
+        gameObject.GetComponentInChildren<SpriteRenderer>().flipX = !(movement.x < 0);
         transform.Translate(movement * speed * Time.deltaTime);
     }
 
@@ -190,7 +191,7 @@ public class Vampire : MonoBehaviour
         {
             isAttacking = false;
         }
-        if(collision.gameObject.CompareTag("Ooze"))
+        if (collision.gameObject.CompareTag("Ooze"))
         {
             sticky = 0;
         }
@@ -198,7 +199,7 @@ public class Vampire : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D col)
     {
-        if(col.gameObject.CompareTag("Ooze"))
+        if (col.gameObject.CompareTag("Ooze"))
         {
             sticky = col.gameObject.GetComponent<Syrup>().sticky;
         }
@@ -209,7 +210,7 @@ public class Vampire : MonoBehaviour
         if (lineOfSight != null)
         {
             lineOfSight.SetPosition(0, transform.position);
-            lineOfSight.SetPosition(1, (isChasing!=null) ? isChasing.position : transform.position);
+            lineOfSight.SetPosition(1, (isChasing != null) ? isChasing.position : transform.position);
         }
     }
 

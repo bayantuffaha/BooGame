@@ -48294,7 +48294,7 @@ PrefabInstance:
       objectReference: {fileID: 1546177013}
     - target: {fileID: 5302955323034408378, guid: e64d0ad1ed1f6f44c89e0e516762d4cd, type: 3}
       propertyPath: timeToAppear
-      value: 100
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 5302955323034408378, guid: e64d0ad1ed1f6f44c89e0e516762d4cd, type: 3}
       propertyPath: detectionRange
