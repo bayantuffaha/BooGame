@@ -381,7 +381,7 @@ public class PlayerMove_2P : MonoBehaviour
             holding.transform.position = new Vector2(gameObject.transform.position.x,gameObject.transform.position.y+2f);
             holding.GetComponent<Rigidbody2D>().velocity = (new Vector2(0f,0f));
         } else {
-            holding.transform.localPosition = new Vector2(0f,0f);
+            holding.transform.localPosition = new Vector2((BooltoInt(isFacingRight) - 0.5f),(BooltoInt(!isFacingDown) - 0.5f));
             holding.GetComponent<Rigidbody2D>().velocity = new Vector2(Input.GetAxis(theHorizontal) * throwForce + 30f * (BooltoInt(isFacingRight) - 0.5f), Input.GetAxis(theVertical) * throwForce + 30f * (BooltoInt(!isFacingDown) - 0.5f));
             holding.transform.parent = null;
             holding = null;

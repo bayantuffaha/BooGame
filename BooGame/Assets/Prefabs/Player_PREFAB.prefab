@@ -463,7 +463,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 0.01
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -551,6 +551,7 @@ MonoBehaviour:
   bottlePrefab: {fileID: 5179372102861423229, guid: b1701a2814b7b3e4582e4cac98ea7f0c, type: 3}
   bombPrefab: {fileID: 7288805196047529225, guid: dbbf902b43f26ac44bdf67a3d8fef188, type: 3}
   throwForce: 100
+  level: 0
 --- !u!114 &4797184563848432433
 MonoBehaviour:
   m_ObjectHideFlags: 0
